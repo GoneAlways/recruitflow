@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   build:
@@ -47,29 +48,32 @@ jobs:
           ANDROID_HOME: /usr/local/lib/android/sdk
         run: |
           echo "sdk.dir=$ANDROID_HOME" > frontend/android/local.properties
-          echo "ANDROID_HOME=$ANDROID_HOME"
-          # Install required SDK platforms and build tools
           yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses 2>/dev/null || true
           $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platforms;android-35" "build-tools;35.0.0" 2>&1 || true
-          $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --list 2>&1 | head -5
 
       - name: Capacitor sync
         working-directory: frontend
         run: npx cap sync android
 
       - name: Build APK (debug)
+        id: build
         working-directory: frontend/android
+        continue-on-error: true
         run: |
-          echo "=== Gradle Version ==="
-          ./gradlew --version 2>&1 || true
-          echo "=== Build ==="
-          ./gradlew assembleDebug --no-daemon --info 2>&1
+          ./gradlew assembleDebug --no-daemon --stacktrace 2>&1 | tee ../build-output.log
+          echo "exit_code=$?" >> $GITHUB_OUTPUT
         env:
           ANDROID_HOME: /usr/local/lib/android/sdk
 
+      - name: Upload build log
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log
+          path: frontend/build-output.log
+          retention-days: 1
+
       - name: List APKs
-        if: always()
-        run: find frontend/android -name "*.apk" 2>/dev/null || echo "No APK found"
+        run: find frontend/android -name "*.apk" -type f 2>/dev/null || echo "No APK found"
 
       - name: Copy APK
         if: success()
@@ -86,3 +90,9 @@ jobs:
             --title "RecruitFlow 最新版" \
             --notes "自动构建 第 ${{ github.run_number }} 次 | 提交 ${{ github.sha }}" \
             --prerelease
+
+      - name: Check build result
+        if: steps.build.outcome == 'failure'
+        run: |
+          echo "BUILD FAILED! Check the build-log artifact for details."
+          tail -60 frontend/build-output.log 2>/dev/null || true
