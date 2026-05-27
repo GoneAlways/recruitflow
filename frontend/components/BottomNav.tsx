@@ -27,7 +27,7 @@ export default function BottomNav() {
             }`}
           >
             <Icon name={tab.icon} />
-            <span className="font-label-md text-label-md">{tab.label}</span>
+            <span className="text-label-md">{tab.label}</span>
           </Link>
         );
       })}

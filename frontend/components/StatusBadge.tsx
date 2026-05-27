@@ -16,7 +16,7 @@ interface StatusBadgeProps {
 export default function StatusBadge({ status }: StatusBadgeProps) {
   const config = statusConfig[status] || statusConfig.applied;
   return (
-    <span className={`px-3 py-1 rounded-full text-label-md font-label-md ${config.bg} ${config.text}`}>
+    <span className={`px-3 py-1 rounded-full text-label-md ${config.bg} ${config.text}`}>
       {config.label}
     </span>
   );

@@ -42,10 +42,10 @@ export default function JobCard({ job, showStatus }: JobCardProps) {
     <Link href={`/jobs/${job.id}`}>
       <div className="bg-surface-container-lowest p-gutter-md rounded-xl border border-border-subtle shadow-card hover:border-primary transition-colors cursor-pointer group">
         <div className="flex justify-between items-start mb-2">
-          <h3 className="font-headline-md text-on-surface group-hover:text-primary transition-colors">
+          <h3 className="text-headline-md text-on-surface group-hover:text-primary transition-colors">
             {job.title}
           </h3>
-          <span className="font-headline-md text-primary">
+          <span className="text-headline-md text-primary">
             {fmt(job.salary_min)} - {fmt(job.salary_max)}
           </span>
         </div>
@@ -69,7 +69,7 @@ export default function JobCard({ job, showStatus }: JobCardProps) {
             )}
           </div>
           <div className="flex-1">
-            <p className="font-label-md text-on-surface">{job.company}</p>
+            <p className="text-on-surface">{job.company}</p>
             <p className="text-xs text-outline">{job.location}</p>
           </div>
           {showStatus && job.status ? (

@@ -6,6 +6,7 @@ import BottomNav from "@/components/BottomNav";
 import JobCard from "@/components/JobCard";
 import { api } from "@/lib/api";
 import { Icon } from "@/components/Icon";
+import { mockJobs } from "@/lib/mock";
 
 export default function HomePage() {
   const [jobs, setJobs] = useState<any[]>([]);
@@ -14,7 +15,13 @@ export default function HomePage() {
 
   useEffect(() => {
     api.jobs.list().then((res) => {
-      if (res.code === 200) setJobs(res.data.items);
+      if (res.code === 200 && res.data?.items?.length) {
+        setJobs(res.data.items);
+      } else {
+        setJobs(mockJobs.data.items);
+      }
+    }).catch(() => {
+      setJobs(mockJobs.data.items);
     });
   }, []);
 

@@ -20,7 +20,7 @@ export default function TopHeader({ title, showBack, backHref = "/" }: TopHeader
           >
             <Icon name="arrow_back_ios_new" />
           </Link>
-          <h1 className="font-headline-md text-headline-md text-on-surface font-semibold absolute left-1/2 -translate-x-1/2">
+          <h1 className="text-headline-md text-on-surface font-semibold absolute left-1/2 -translate-x-1/2">
             {title}
           </h1>
           <div className="w-10 h-10" />
@@ -31,7 +31,7 @@ export default function TopHeader({ title, showBack, backHref = "/" }: TopHeader
             <div className="w-8 h-8 rounded-full overflow-hidden border border-outline-variant bg-primary-container flex items-center justify-center">
               <Icon name="person" className="text-on-primary text-[18px]" />
             </div>
-            <Link href="/" className="text-headline-md font-headline-md font-bold text-primary">
+            <Link href="/" className="text-headline-md font-bold text-primary">
               RecruitFlow
             </Link>
           </div>
