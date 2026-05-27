@@ -39,7 +39,7 @@ export default function TrackingPage() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-5 py-2 rounded-full font-label-md text-label-md whitespace-nowrap transition-all ${
+                className={`px-5 py-2 rounded-full text-label-md whitespace-nowrap transition-all ${
                   activeTab === tab
                     ? "bg-primary text-on-primary shadow-sm"
                     : "bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-high"
@@ -60,10 +60,10 @@ export default function TrackingPage() {
             >
               <div className="flex justify-between items-start mb-2">
                 <div>
-                  <h3 className="font-headline-md text-headline-md text-on-surface">
+                  <h3 className="text-headline-md text-on-surface">
                     {app.job?.title || "职位"}
                   </h3>
-                  <p className="font-body-md text-body-md text-on-surface-variant">
+                  <p className="text-body-md text-on-surface-variant">
                     {app.job?.company || ""}
                   </p>
                 </div>
@@ -72,16 +72,16 @@ export default function TrackingPage() {
                 </span>
               </div>
               <div className="flex flex-wrap gap-2 mb-4">
-                <span className="px-2 py-1 bg-surface-container rounded-lg text-label-md font-label-md text-on-secondary-container">
+                <span className="px-2 py-1 bg-surface-container rounded-lg text-label-md text-on-secondary-container">
                   {app.job?.location}
                 </span>
-                <span className="px-2 py-1 bg-surface-container rounded-lg text-label-md font-label-md text-on-secondary-container">
+                <span className="px-2 py-1 bg-surface-container rounded-lg text-label-md text-on-secondary-container">
                   {app.job?.experience}
                 </span>
               </div>
               <div className="flex justify-between items-center pt-3 border-t border-border-subtle">
                 <div className="flex items-center gap-2">
-                  <span className="text-label-sm font-label-sm text-outline">
+                  <span className="text-label-sm text-outline">
                     {formatTimeAgo(app.applied_at)}
                   </span>
                 </div>
@@ -92,7 +92,7 @@ export default function TrackingPage() {
           {apps.length === 0 && (
             <div className="text-center py-20 text-on-surface-variant">
               <Icon name="inbox" className="text-5xl mb-4 block" />
-              <p className="font-body-lg">暂无投递记录</p>
+              <p className="text-body-lg">暂无投递记录</p>
             </div>
           )}
         </section>

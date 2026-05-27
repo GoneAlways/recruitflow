@@ -6,10 +6,12 @@ import BottomNav from "@/components/BottomNav";
 import { api, isLoggedIn } from "@/lib/api";
 import Link from "next/link";
 import { Icon } from "@/components/Icon";
+import { mockUser } from "@/lib/mock";
 
 export default function ProfilePage() {
   const router = useRouter();
   const [user, setUser] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (!isLoggedIn()) {
@@ -17,11 +19,16 @@ export default function ProfilePage() {
       return;
     }
     api.user.profile().then((res) => {
-      if (res.code === 200) setUser(res.data);
+      if (res.code === 200 && res.data) {
+        setUser(res.data);
+      } else {
+        setUser(mockUser.data);
+      }
+      setLoading(false);
     });
   }, [router]);
 
-  if (!user) {
+  if (loading) {
     return (
       <div className="min-h-screen bg-background-surface flex items-center justify-center">
         <p className="text-on-surface-variant">加载中...</p>
@@ -34,13 +41,13 @@ export default function ProfilePage() {
       {/* Desktop Header */}
       <header className="hidden md:flex justify-between items-center w-full px-margin-desktop h-14 bg-surface sticky top-0 z-50">
         <div className="flex items-center gap-4">
-          <span className="text-headline-md font-headline-md font-bold text-primary">RecruitFlow</span>
+          <span className="text-headline-md font-bold text-primary">RecruitFlow</span>
         </div>
         <nav className="flex gap-6">
-          <Link href="/" className="text-on-surface-variant hover:bg-surface-container-high px-3 py-2 rounded-md font-body-md text-body-md transition-colors">
+          <Link href="/" className="text-on-surface-variant hover:bg-surface-container-high px-3 py-2 rounded-md text-body-md transition-colors">
             职位
           </Link>
-          <Link href="/profile" className="text-primary hover:bg-surface-container-high px-3 py-2 rounded-md font-body-md text-body-md transition-colors">
+          <Link href="/profile" className="text-primary hover:bg-surface-container-high px-3 py-2 rounded-md text-body-md transition-colors">
             我的
           </Link>
         </nav>
@@ -59,10 +66,10 @@ export default function ProfilePage() {
                 </div>
               </div>
               <div>
-                <h1 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-1">
+                <h1 className="text-headline-lg-mobile md:text-headline-lg text-on-surface mb-1">
                   {user.name}
                 </h1>
-                <p className="font-body-md text-body-md text-on-surface-variant flex items-center gap-1">
+                <p className="text-body-md text-on-surface-variant flex items-center gap-1">
                   {user.title || "未设置职位"} <span className="w-1 h-1 rounded-full bg-border-subtle inline-block mx-1" /> 离职-随时到岗
                 </p>
               </div>
@@ -71,8 +78,8 @@ export default function ProfilePage() {
             {/* Completeness */}
             <div className="mb-4 relative z-10">
               <div className="flex justify-between items-end mb-2">
-                <span className="font-label-md text-label-md text-on-surface-variant">微简历完成度</span>
-                <span className="font-label-md text-label-md text-primary">{user.profile_completeness || 0}%</span>
+                <span className="text-label-md text-on-surface-variant">微简历完成度</span>
+                <span className="text-label-md text-primary">{user.profile_completeness || 0}%</span>
               </div>
               <div className="w-full h-1.5 bg-surface-variant rounded-full overflow-hidden">
                 <div
@@ -84,7 +91,7 @@ export default function ProfilePage() {
 
             <Link
               href="/profile/edit"
-              className="w-full py-2 bg-primary-container text-on-primary-container rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity flex items-center justify-center gap-2 relative z-10"
+              className="w-full py-2 bg-primary-container text-on-primary-container rounded-lg text-label-md hover:opacity-90 transition-opacity flex items-center justify-center gap-2 relative z-10"
             >
               <Icon name="edit_document" className="text-[16px]" />
               编辑在线简历
@@ -102,8 +109,8 @@ export default function ProfilePage() {
                 key={stat.label}
                 className="bg-surface-container-lowest rounded-xl p-4 flex flex-col items-center justify-center border border-border-subtle shadow-card hover:border-primary/30 transition-colors cursor-pointer"
               >
-                <span className="font-headline-md text-headline-md text-on-surface mb-1">{stat.num}</span>
-                <span className="font-label-sm text-label-sm text-on-surface-variant">{stat.label}</span>
+                <span className="text-headline-md text-on-surface mb-1">{stat.num}</span>
+                <span className="text-label-sm text-on-surface-variant">{stat.label}</span>
               </div>
             ))}
           </section>
@@ -113,13 +120,13 @@ export default function ProfilePage() {
             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,var(--tw-gradient-stops))] from-primary via-transparent to-transparent" />
             <div className="flex items-center justify-between relative z-10">
               <div>
-                <h3 className="font-headline-md text-headline-md text-on-surface mb-1 flex items-center gap-1">
+                <h3 className="text-headline-md text-on-surface mb-1 flex items-center gap-1">
                   <Icon name="workspace_premium" className="text-tertiary-container" />
                   职场加速包
                 </h3>
-                <p className="font-label-sm text-label-sm text-on-surface-variant">提升3倍简历曝光率</p>
+                <p className="text-label-sm text-on-surface-variant">提升3倍简历曝光率</p>
               </div>
-              <span className="font-label-md text-label-md text-primary bg-primary/10 px-3 py-1.5 rounded-full group-hover:bg-primary group-hover:text-on-primary transition-colors">
+              <span className="text-label-md text-primary bg-primary/10 px-3 py-1.5 rounded-full group-hover:bg-primary group-hover:text-on-primary transition-colors">
                 立即开启
               </span>
             </div>
@@ -145,7 +152,7 @@ export default function ProfilePage() {
                   <div className="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:text-primary transition-colors">
                     <Icon name={item.icon} size={20} />
                   </div>
-                  <span className="font-body-md text-body-md text-on-surface">{item.label}</span>
+                  <span className="text-body-md text-on-surface">{item.label}</span>
                 </div>
                 <Icon name="chevron_right" className="text-outline-variant group-hover:text-primary transition-colors" />
               </Link>
@@ -155,7 +162,7 @@ export default function ProfilePage() {
           {/* Switch Identity */}
           <button className="flex items-center justify-center gap-2 p-4 rounded-xl border-2 border-border-subtle bg-transparent text-secondary hover:text-primary hover:border-primary hover:bg-surface-container-low transition-all duration-200 group">
             <Icon name="swap_horiz" className="group-hover:rotate-180 transition-transform duration-500" />
-            <span className="font-body-md text-body-md font-medium">切换为招聘者身份</span>
+            <span className="text-body-md font-medium">切换为招聘者身份</span>
           </button>
         </div>
       </main>

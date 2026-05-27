@@ -27,7 +27,7 @@ export default function HomePage() {
           <div className="relative">
             <Icon name="search" className="absolute left-4 top-1/2 -translate-y-1/2 text-outline" />
             <input
-              className="w-full h-12 pl-12 pr-4 bg-surface-container-lowest border border-border-subtle rounded-xl font-body-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+              className="w-full h-12 pl-12 pr-4 bg-surface-container-lowest border border-border-subtle rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
               placeholder="职位名称、公司名称"
               type="text"
               value={search}
@@ -41,7 +41,7 @@ export default function HomePage() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`font-label-md text-label-md pb-3 relative transition-colors ${
+                className={`text-label-md pb-3 relative transition-colors ${
                   activeTab === tab
                     ? "text-primary active-tab after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[3px] after:bg-primary after:rounded-[99px]"
                     : "text-on-surface-variant hover:text-primary"
@@ -57,7 +57,7 @@ export default function HomePage() {
         <section className="px-margin-mobile mb-8">
           <div className="bg-primary-container p-4 rounded-xl flex justify-between items-center overflow-hidden relative">
             <div className="z-10">
-              <h3 className="font-headline-md text-white mb-1">职业洞察</h3>
+              <h3 className="text-white mb-1">职业洞察</h3>
               <p className="text-white/80 text-sm">更新你的简历，可提高 20% 的匹配度。</p>
             </div>
             <Icon name="auto_awesome" className="text-white/20 text-6xl absolute -right-4 -bottom-4" />
@@ -66,7 +66,7 @@ export default function HomePage() {
 
         {/* Job Listings */}
         <section className="px-margin-mobile flex flex-col gap-3">
-          <h2 className="font-label-md text-label-md uppercase tracking-wider text-outline mb-1">
+          <h2 className="text-label-md uppercase tracking-wider text-outline mb-1">
             为你推荐
           </h2>
           {jobs.map((job) => (

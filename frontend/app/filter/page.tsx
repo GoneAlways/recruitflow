@@ -46,7 +46,7 @@ export default function FilterPage() {
     grid?: boolean;
   }) => (
     <section>
-      <h2 className="font-label-md text-label-md text-on-surface-variant mb-3 uppercase tracking-wide">
+      <h2 className="text-label-md text-on-surface-variant mb-3 uppercase tracking-wide">
         {title}
       </h2>
       <div className={grid ? "grid grid-cols-3 gap-2" : "flex flex-wrap gap-2"}>
@@ -54,7 +54,7 @@ export default function FilterPage() {
           <button
             key={opt}
             onClick={() => onChange(opt)}
-            className={`filter-chip border px-4 py-2 rounded-full font-body-md text-body-md transition-all ${
+            className={`filter-chip border px-4 py-2 rounded-full text-body-md transition-all ${
               grid ? "px-2 py-3 rounded-lg text-center" : ""
             } ${
               value === opt
@@ -70,7 +70,7 @@ export default function FilterPage() {
   );
 
   return (
-    <div className="min-h-screen bg-background-surface font-body-md text-on-surface antialiased flex flex-col">
+    <div className="min-h-screen bg-background-surface text-on-surface antialiased flex flex-col">
       {/* Header */}
       <header className="bg-surface docked full-width top-0 z-50 flex justify-between items-center w-full px-margin-mobile h-14 border-b border-border-subtle">
         <button
@@ -79,7 +79,7 @@ export default function FilterPage() {
         >
           <Icon name="close" />
         </button>
-        <h1 className="font-headline-md text-headline-md font-bold text-on-surface">筛选职位</h1>
+        <h1 className="text-headline-md font-bold text-on-surface">筛选职位</h1>
         <div className="w-10" />
       </header>
 
@@ -96,13 +96,13 @@ export default function FilterPage() {
       <div className="fixed bottom-0 left-0 w-full bg-surface-container-lowest border-t border-border-subtle px-margin-mobile py-4 pb-safe flex gap-4 z-50">
         <button
           onClick={handleReset}
-          className="flex-1 bg-surface-container-low text-on-surface border border-border-subtle py-3 rounded-xl font-headline-md text-body-lg text-center hover:bg-surface-container-high transition-colors"
+          className="flex-1 bg-surface-container-low text-on-surface border border-border-subtle py-3 rounded-xl text-body-lg text-center hover:bg-surface-container-high transition-colors"
         >
           重置
         </button>
         <button
           onClick={handleConfirm}
-          className="flex-[2] bg-primary text-on-primary py-3 rounded-xl font-headline-md text-body-lg text-center shadow-md hover:bg-primary-fixed-dim transition-colors"
+          className="flex-[2] bg-primary text-on-primary py-3 rounded-xl text-body-lg text-center shadow-md hover:bg-primary-fixed-dim transition-colors"
         >
           确定 (124)
         </button>

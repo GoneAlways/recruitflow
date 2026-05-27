@@ -26,7 +26,7 @@ export default function EditEducationPage() {
         >
           <Icon name="arrow_back_ios_new" />
         </button>
-        <h1 className="font-headline-md text-headline-md text-on-surface font-semibold absolute left-1/2 -translate-x-1/2">
+        <h1 className="text-headline-md text-on-surface font-semibold absolute left-1/2 -translate-x-1/2">
           编辑教育经历
         </h1>
         <div className="w-10 h-10" />
@@ -38,14 +38,14 @@ export default function EditEducationPage() {
 
           {/* School Name */}
           <div className="flex flex-col gap-stack-gap">
-            <label className="font-label-md text-label-md text-on-surface-variant flex items-center gap-1" htmlFor="school">
+            <label className="text-label-md text-on-surface-variant flex items-center gap-1" htmlFor="school">
               学校名称 <span className="text-error">*</span>
             </label>
             <div className="relative">
               <Icon name="account_balance" className="absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none" />
               <input
                 id="school"
-                className="w-full h-12 pl-12 pr-4 rounded-xl border border-border-subtle bg-background-surface text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                className="w-full h-12 pl-12 pr-4 rounded-xl border border-border-subtle bg-background-surface text-on-surface text-body-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                 placeholder="请输入学校名称"
                 value={school}
                 onChange={(e) => setSchool(e.target.value)}
@@ -55,14 +55,14 @@ export default function EditEducationPage() {
 
           {/* Major */}
           <div className="flex flex-col gap-stack-gap">
-            <label className="font-label-md text-label-md text-on-surface-variant flex items-center gap-1" htmlFor="major">
+            <label className="text-label-md text-on-surface-variant flex items-center gap-1" htmlFor="major">
               专业 <span className="text-error">*</span>
             </label>
             <div className="relative">
               <Icon name="book" className="absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none" />
               <input
                 id="major"
-                className="w-full h-12 pl-12 pr-4 rounded-xl border border-border-subtle bg-background-surface text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                className="w-full h-12 pl-12 pr-4 rounded-xl border border-border-subtle bg-background-surface text-on-surface text-body-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                 placeholder="请输入专业名称"
                 value={major}
                 onChange={(e) => setMajor(e.target.value)}
@@ -73,14 +73,14 @@ export default function EditEducationPage() {
           {/* Degree & Time */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter-md">
             <div className="flex flex-col gap-stack-gap">
-              <label className="font-label-md text-label-md text-on-surface-variant" htmlFor="degree">
+              <label className="text-label-md text-on-surface-variant" htmlFor="degree">
                 学历 <span className="text-error">*</span>
               </label>
               <div className="relative">
                 <Icon name="school" className="absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none" />
                 <select
                   id="degree"
-                  className="w-full h-12 pl-12 pr-10 rounded-xl border border-border-subtle bg-background-surface text-on-surface font-body-md text-body-md appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all cursor-pointer"
+                  className="w-full h-12 pl-12 pr-10 rounded-xl border border-border-subtle bg-background-surface text-on-surface text-body-md appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all cursor-pointer"
                   value={degree}
                   onChange={(e) => setDegree(e.target.value)}
                 >
@@ -95,7 +95,7 @@ export default function EditEducationPage() {
             </div>
 
             <div className="flex flex-col gap-stack-gap">
-              <label className="font-label-md text-label-md text-on-surface-variant" htmlFor="grad-time">
+              <label className="text-label-md text-on-surface-variant" htmlFor="grad-time">
                 毕业时间 <span className="text-error">*</span>
               </label>
               <div className="relative">
@@ -103,7 +103,7 @@ export default function EditEducationPage() {
                 <input
                   id="grad-time"
                   type="month"
-                  className="w-full h-12 pl-12 pr-4 rounded-xl border border-border-subtle bg-background-surface text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all cursor-pointer"
+                  className="w-full h-12 pl-12 pr-4 rounded-xl border border-border-subtle bg-background-surface text-on-surface text-body-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all cursor-pointer"
                   value={gradTime}
                   onChange={(e) => setGradTime(e.target.value)}
                 />
@@ -113,12 +113,12 @@ export default function EditEducationPage() {
 
           {/* Description */}
           <div className="flex flex-col gap-stack-gap mt-2">
-            <label className="font-label-md text-label-md text-on-surface-variant" htmlFor="desc">
+            <label className="text-label-md text-on-surface-variant" htmlFor="desc">
               在校经历 (选填)
             </label>
             <textarea
               id="desc"
-              className="w-full p-4 rounded-xl border border-border-subtle bg-background-surface text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"
+              className="w-full p-4 rounded-xl border border-border-subtle bg-background-surface text-on-surface text-body-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"
               placeholder="描述您的主修课程、荣誉奖项或在校活动..."
               rows={3}
               value={description}
@@ -133,7 +133,7 @@ export default function EditEducationPage() {
         <div className="max-w-2xl mx-auto flex gap-gutter-sm">
           <button
             onClick={handleSave}
-            className="flex-1 h-12 bg-primary text-on-primary rounded-xl font-label-md text-label-md flex items-center justify-center hover:bg-surface-tint transition-all active:scale-[0.98] shadow-sm"
+            className="flex-1 h-12 bg-primary text-on-primary rounded-xl text-label-md flex items-center justify-center hover:bg-surface-tint transition-all active:scale-[0.98] shadow-sm"
           >
             保存
           </button>

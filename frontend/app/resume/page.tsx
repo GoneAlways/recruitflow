@@ -7,10 +7,12 @@ import BottomNav from "@/components/BottomNav";
 import { api, isLoggedIn } from "@/lib/api";
 import Link from "next/link";
 import { Icon } from "@/components/Icon";
+import { mockUser } from "@/lib/mock";
 
 export default function ResumePage() {
   const router = useRouter();
   const [user, setUser] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (!isLoggedIn()) {
@@ -18,11 +20,17 @@ export default function ResumePage() {
       return;
     }
     api.user.profile().then((res) => {
-      if (res.code === 200) setUser(res.data);
+      if (res.code === 200 && res.data) {
+        setUser(res.data);
+      } else {
+        // Fallback to mock data
+        setUser(mockUser.data);
+      }
+      setLoading(false);
     });
   }, [router]);
 
-  if (!user) {
+  if (loading) {
     return (
       <div className="min-h-screen bg-background-surface flex items-center justify-center">
         <p className="text-on-surface-variant">加载中...</p>
@@ -84,6 +92,14 @@ export default function ResumePage() {
             ))}
           </div>
         </section>
+
+        {/* Resume Summary */}
+        {user.summary && (
+          <section className="bg-surface-container-lowest rounded-xl p-gutter-md border border-border-subtle shadow-card">
+            <h3 className="text-label-md text-on-surface-variant mb-3">个人简介</h3>
+            <p className="text-body-md text-on-surface leading-relaxed">{user.summary}</p>
+          </section>
+        )}
       </main>
       <BottomNav />
     </div>

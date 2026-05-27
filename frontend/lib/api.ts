@@ -1,13 +1,35 @@
+import { mockUser } from "./mock";
+
 const API_BASE = "http://8.136.142.66/api";
+const TIMEOUT_MS = 5000;
 
 function getToken(): string | null {
   if (typeof window === "undefined") return null;
   return localStorage.getItem("token");
 }
 
+async function fetchWithTimeout(
+  url: string,
+  options: RequestInit = {},
+  timeout = TIMEOUT_MS
+): Promise<Response> {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeout);
+  try {
+    const res = await fetch(url, {
+      ...options,
+      signal: controller.signal,
+    });
+    return res;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 async function request<T>(
   endpoint: string,
-  options: RequestInit = {}
+  options: RequestInit = {},
+  fallback?: T
 ): Promise<{ code: number; message: string; data: T }> {
   const token = getToken();
   const headers: Record<string, string> = {
@@ -16,13 +38,29 @@ async function request<T>(
   };
   if (token) headers["Authorization"] = `Bearer ${token}`;
 
-  const res = await fetch(`${API_BASE}${endpoint}`, { ...options, headers });
-  return res.json();
+  try {
+    const res = await fetchWithTimeout(`${API_BASE}${endpoint}`, {
+      ...options,
+      headers,
+    });
+    return res.json();
+  } catch {
+    // Network error or timeout — return fallback if provided
+    if (fallback !== undefined) {
+      return { code: 200, message: "离线模式", data: fallback };
+    }
+    return { code: 0, message: "网络不可用，请稍后重试", data: [] as any };
+  }
 }
 
 export const api = {
   auth: {
-    register: (data: { name: string; phone: string; password: string; email?: string }) =>
+    register: (data: {
+      name: string;
+      phone: string;
+      password: string;
+      email?: string;
+    }) =>
       request<{ token: string; user: any }>("/auth/register", {
         method: "POST",
         body: JSON.stringify(data),
@@ -52,7 +90,7 @@ export const api = {
   },
 
   user: {
-    profile: () => request<any>("/user/profile"),
+    profile: () => request<any>("/user/profile", {}, mockUser.data),
     updateProfile: (data: any) =>
       request<any>("/user/profile", {
         method: "PUT",

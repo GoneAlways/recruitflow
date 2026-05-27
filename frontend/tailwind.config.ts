@@ -24,6 +24,7 @@ const config: Config = {
         "surface-container-highest": "#dee4e3",
         "surface-bright": "#f5fafa",
         "surface-dim": "#d5dbda",
+        "surface-variant": "#dae5e4",
         "surface-tint": "#006a6a",
         "background": "#f5fafa",
         "background-surface": "#F7F8FA",

@@ -60,10 +60,10 @@ export default function LoginPage() {
           <div className="w-16 h-16 bg-primary rounded-xl flex items-center justify-center shadow-lg transform transition-transform hover:scale-105 duration-300">
             <Icon name="rocket_launch" className="text-on-primary !text-[32px]" />
           </div>
-          <h1 className="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary tracking-tight">
+          <h1 className="text-headline-lg-mobile md:md:text-headline-lg text-primary tracking-tight">
             RecruitFlow
           </h1>
-          <p className="font-body-md text-body-md text-on-surface-variant opacity-80">
+          <p className="text-body-md text-on-surface-variant opacity-80">
             加速您的职业旅程
           </p>
         </section>
@@ -73,12 +73,12 @@ export default function LoginPage() {
           <form className="space-y-6" onSubmit={handleSubmit}>
             {isRegister && (
               <div className="space-y-2">
-                <label className="font-label-md text-label-md text-on-surface-variant ml-1" htmlFor="name">
+                <label className="text-label-md text-on-surface-variant ml-1" htmlFor="name">
                   姓名
                 </label>
                 <input
                   id="name"
-                  className="w-full h-12 px-4 rounded-xl border border-border-subtle bg-surface-container-low font-body-lg text-body-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                  className="w-full h-12 px-4 rounded-xl border border-border-subtle bg-surface-container-low text-body-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                   placeholder="请输入姓名"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -87,17 +87,17 @@ export default function LoginPage() {
             )}
 
             <div className="space-y-2">
-              <label className="font-label-md text-label-md text-on-surface-variant ml-1" htmlFor="phone">
+              <label className="text-label-md text-on-surface-variant ml-1" htmlFor="phone">
                 手机号
               </label>
               <div className="flex items-center gap-2 p-1 border border-border-subtle rounded-xl bg-surface-container-low transition-all duration-200 focus-within:ring-2 focus-within:ring-primary/20 focus-within:border-primary">
                 <div className="flex items-center gap-1 px-3 border-r border-border-subtle cursor-pointer py-2">
-                  <span className="font-body-md text-body-md text-on-surface font-semibold">+86</span>
+                  <span className="text-body-md text-on-surface font-semibold">+86</span>
                   <Icon name="expand_more" className="text-outline text-[18px]" />
                 </div>
                 <input
                   id="phone"
-                  className="w-full bg-transparent border-none focus:ring-0 font-body-lg text-body-lg py-2 px-1 text-on-surface placeholder:text-outline"
+                  className="w-full bg-transparent border-none focus:ring-0 text-body-lg py-2 px-1 text-on-surface placeholder:text-outline"
                   placeholder="请输入手机号"
                   type="tel"
                   value={phone}
@@ -107,12 +107,12 @@ export default function LoginPage() {
             </div>
 
             <div className="space-y-2">
-              <label className="font-label-md text-label-md text-on-surface-variant ml-1" htmlFor="password">
+              <label className="text-label-md text-on-surface-variant ml-1" htmlFor="password">
                 密码
               </label>
               <input
                 id="password"
-                className="w-full h-12 px-4 rounded-xl border border-border-subtle bg-surface-container-low font-body-lg text-body-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                className="w-full h-12 px-4 rounded-xl border border-border-subtle bg-surface-container-low text-body-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                 placeholder="请输入密码"
                 type="password"
                 value={password}
@@ -123,7 +123,7 @@ export default function LoginPage() {
             {error && <p className="text-error text-body-md text-center">{error}</p>}
 
             <button
-              className="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-xl hover:bg-on-primary-fixed-variant active:scale-95 transition-all duration-200 shadow-sm"
+              className="w-full bg-primary text-on-primary text-label-md py-4 rounded-xl hover:bg-on-primary-fixed-variant active:scale-95 transition-all duration-200 shadow-sm"
               type="submit"
             >
               {isRegister ? "注册" : "登录"}
@@ -132,7 +132,7 @@ export default function LoginPage() {
             {/* Divider */}
             <div className="relative flex items-center py-2">
               <div className="flex-grow border-t border-border-subtle" />
-              <span className="flex-shrink mx-4 font-label-sm text-label-sm text-outline uppercase tracking-wider">
+              <span className="flex-shrink mx-4 text-label-sm text-outline uppercase tracking-wider">
                 或其他方式
               </span>
               <div className="flex-grow border-t border-border-subtle" />
@@ -144,14 +144,14 @@ export default function LoginPage() {
                 className="flex items-center justify-center gap-2 border border-border-subtle py-3 rounded-xl hover:bg-surface-container-low active:scale-95 transition-all duration-200"
                 type="button"
               >
-                <span className="font-label-md text-label-md text-on-surface-variant">微信</span>
+                <span className="text-label-md text-on-surface-variant">微信</span>
               </button>
               <button
                 className="flex items-center justify-center gap-2 border border-border-subtle py-3 rounded-xl hover:bg-surface-container-low active:scale-95 transition-all duration-200"
                 type="button"
               >
                 <Icon name="mail" className="text-on-surface-variant !text-[20px]" />
-                <span className="font-label-md text-label-md text-on-surface-variant">邮箱</span>
+                <span className="text-label-md text-on-surface-variant">邮箱</span>
               </button>
             </div>
           </form>
@@ -161,7 +161,7 @@ export default function LoginPage() {
         <div className="mt-6 text-center">
           <button
             onClick={() => setIsRegister(!isRegister)}
-            className="text-primary font-label-md hover:underline"
+            className="text-primary hover:underline"
           >
             {isRegister ? "已有账号？去登录" : "没有账号？去注册"}
           </button>
@@ -176,7 +176,7 @@ export default function LoginPage() {
             checked={privacyChecked}
             onChange={(e) => setPrivacyChecked(e.target.checked)}
           />
-          <label className="font-body-md text-body-md text-on-surface-variant leading-tight cursor-pointer" htmlFor="privacy">
+          <label className="text-body-md text-on-surface-variant leading-tight cursor-pointer" htmlFor="privacy">
             我已阅读并同意
             <a className="text-primary font-semibold hover:underline" href="#">用户协议</a>
             和
@@ -192,7 +192,7 @@ export default function LoginPage() {
         }`}
       >
         <Icon name="check_circle" className="text-success-mint" />
-        <span className="font-label-md text-label-md">{isRegister ? "注册成功" : "登录成功"}</span>
+        <span className="text-label-md">{isRegister ? "注册成功" : "登录成功"}</span>
       </div>
     </div>
   );

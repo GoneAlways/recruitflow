@@ -53,8 +53,8 @@ export default function JobDetailClient() {
               <span className="text-2xl font-bold text-primary">{job.company?.[0]}</span>
             </div>
             <div>
-              <h1 className="font-headline-md text-headline-md text-on-surface">{job.title}</h1>
-              <p className="font-body-md text-on-surface-variant">{job.company}</p>
+              <h1 className="text-headline-md text-on-surface">{job.title}</h1>
+              <p className="text-on-surface-variant">{job.company}</p>
             </div>
           </div>
           <div className="flex items-center gap-2 mb-4">
@@ -65,27 +65,27 @@ export default function JobDetailClient() {
             <span className="px-2 py-1 bg-surface-container-high rounded-md text-[10px] font-bold text-on-surface-variant">{job.job_type}</span>
             <span className="px-2 py-1 bg-surface-container-high rounded-md text-[10px] font-bold text-on-surface-variant">{job.experience}</span>
           </div>
-          <button onClick={handleApply} disabled={applying} className="w-full h-12 bg-primary text-on-primary rounded-xl font-label-md text-label-md hover:bg-primary-container transition-all active:scale-[0.98] disabled:opacity-50">
+          <button onClick={handleApply} disabled={applying} className="w-full h-12 bg-primary text-on-primary rounded-xl text-label-md hover:bg-primary-container transition-all active:scale-[0.98] disabled:opacity-50">
             {applying ? "投递中..." : "立即投递"}
           </button>
           {msg && (
-            <p className={`text-center mt-2 font-label-md ${msg.includes("成功") ? "text-status-offered" : "text-error"}`}>{msg}</p>
+            <p className={`text-center mt-2 ${msg.includes("成功") ? "text-status-offered" : "text-error"}`}>{msg}</p>
           )}
         </div>
         <section className="mx-margin-mobile mt-4 bg-surface-container-lowest p-gutter-md rounded-xl border border-border-subtle">
-          <h2 className="font-headline-md text-on-surface mb-3">职位描述</h2>
-          <p className="font-body-md text-on-surface-variant leading-relaxed whitespace-pre-wrap">{job.description}</p>
+          <h2 className="text-on-surface mb-3">职位描述</h2>
+          <p className="text-on-surface-variant leading-relaxed whitespace-pre-wrap">{job.description}</p>
         </section>
         {job.requirements && (
           <section className="mx-margin-mobile mt-4 bg-surface-container-lowest p-gutter-md rounded-xl border border-border-subtle">
-            <h2 className="font-headline-md text-on-surface mb-3">任职要求</h2>
-            <p className="font-body-md text-on-surface-variant leading-relaxed whitespace-pre-wrap">{job.requirements}</p>
+            <h2 className="text-on-surface mb-3">任职要求</h2>
+            <p className="text-on-surface-variant leading-relaxed whitespace-pre-wrap">{job.requirements}</p>
           </section>
         )}
         {job.benefits && (
           <section className="mx-margin-mobile mt-4 bg-surface-container-lowest p-gutter-md rounded-xl border border-border-subtle">
-            <h2 className="font-headline-md text-on-surface mb-3">福利待遇</h2>
-            <p className="font-body-md text-on-surface-variant leading-relaxed whitespace-pre-wrap">{job.benefits}</p>
+            <h2 className="text-on-surface mb-3">福利待遇</h2>
+            <p className="text-on-surface-variant leading-relaxed whitespace-pre-wrap">{job.benefits}</p>
           </section>
         )}
       </main>

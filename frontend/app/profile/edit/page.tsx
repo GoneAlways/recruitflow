@@ -41,7 +41,7 @@ export default function EditProfilePage() {
         >
           <Icon name="arrow_back_ios" />
         </button>
-        <h1 className="font-headline-md text-[18px] font-semibold text-on-surface">编辑个人信息</h1>
+        <h1 className="text-[18px] font-semibold text-on-surface">编辑个人信息</h1>
         <div className="w-10" />
       </header>
 
@@ -56,19 +56,19 @@ export default function EditProfilePage() {
               <Icon name="photo_camera" className="text-on-primary text-[16px]" />
             </div>
           </div>
-          <p className="mt-3 font-label-md text-label-md text-on-surface-variant">点击更换头像</p>
+          <p className="mt-3 text-label-md text-on-surface-variant">点击更换头像</p>
         </section>
 
         {/* Form */}
         <section className="bg-surface-container-lowest rounded-xl p-gutter-md shadow-card border border-border-subtle flex flex-col gap-6">
           {/* Name */}
           <div className="flex flex-col gap-2">
-            <label className="font-label-md text-label-md text-on-surface" htmlFor="name">
+            <label className="text-label-md text-on-surface" htmlFor="name">
               姓名 <span className="text-error">*</span>
             </label>
             <input
               id="name"
-              className="w-full h-12 px-4 rounded-xl border border-border-subtle bg-surface-bright font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+              className="w-full h-12 px-4 rounded-xl border border-border-subtle bg-surface-bright text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
               placeholder="请输入真实姓名"
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -77,7 +77,7 @@ export default function EditProfilePage() {
 
           {/* Gender */}
           <div className="flex flex-col gap-2">
-            <label className="font-label-md text-label-md text-on-surface">性别</label>
+            <label className="text-label-md text-on-surface">性别</label>
             <div className="flex p-1 bg-surface-container rounded-xl w-full">
               {[
                 { value: "male", label: "男" },
@@ -86,7 +86,7 @@ export default function EditProfilePage() {
                 <button
                   key={g.value}
                   onClick={() => setGender(g.value)}
-                  className={`flex-1 h-10 flex items-center justify-center rounded-lg font-label-md text-label-md transition-all duration-200 ${
+                  className={`flex-1 h-10 flex items-center justify-center rounded-lg text-label-md transition-all duration-200 ${
                     gender === g.value
                       ? "bg-surface-container-lowest shadow-sm text-primary"
                       : "text-on-surface-variant hover:bg-surface-container-low"
@@ -100,14 +100,14 @@ export default function EditProfilePage() {
 
           {/* Birthday */}
           <div className="flex flex-col gap-2">
-            <label className="font-label-md text-label-md text-on-surface" htmlFor="birthday">
+            <label className="text-label-md text-on-surface" htmlFor="birthday">
               出生年月
             </label>
             <div className="relative">
               <input
                 id="birthday"
                 type="date"
-                className="w-full h-12 px-4 rounded-xl border border-border-subtle bg-surface-bright font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 appearance-none"
+                className="w-full h-12 px-4 rounded-xl border border-border-subtle bg-surface-bright text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 appearance-none"
                 value={birthday}
                 onChange={(e) => setBirthday(e.target.value)}
               />
@@ -117,14 +117,14 @@ export default function EditProfilePage() {
 
           {/* Work Start Date */}
           <div className="flex flex-col gap-2">
-            <label className="font-label-md text-label-md text-on-surface" htmlFor="workDate">
+            <label className="text-label-md text-on-surface" htmlFor="workDate">
               参加工作时间
             </label>
             <div className="relative">
               <input
                 id="workDate"
                 type="date"
-                className="w-full h-12 px-4 rounded-xl border border-border-subtle bg-surface-bright font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 appearance-none"
+                className="w-full h-12 px-4 rounded-xl border border-border-subtle bg-surface-bright text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 appearance-none"
                 value={workDate}
                 onChange={(e) => setWorkDate(e.target.value)}
               />
@@ -134,13 +134,13 @@ export default function EditProfilePage() {
 
           {/* City */}
           <div className="flex flex-col gap-2">
-            <label className="font-label-md text-label-md text-on-surface" htmlFor="city">
+            <label className="text-label-md text-on-surface" htmlFor="city">
               所在城市
             </label>
             <div className="relative">
               <input
                 id="city"
-                className="w-full h-12 px-4 pr-10 rounded-xl border border-border-subtle bg-surface-bright font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                className="w-full h-12 px-4 pr-10 rounded-xl border border-border-subtle bg-surface-bright text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
                 placeholder="请选择或输入城市"
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
@@ -156,7 +156,7 @@ export default function EditProfilePage() {
         <div className="max-w-[600px] mx-auto w-full">
           <button
             onClick={handleSave}
-            className="w-full h-12 bg-primary text-on-primary font-headline-md text-[16px] rounded-xl flex items-center justify-center hover:bg-primary-container hover:text-on-primary-container active:scale-[0.98] transition-all duration-200 shadow-sm"
+            className="w-full h-12 bg-primary text-on-primary text-[16px] rounded-xl flex items-center justify-center hover:bg-primary-container hover:text-on-primary-container active:scale-[0.98] transition-all duration-200 shadow-sm"
           >
             保存
           </button>
