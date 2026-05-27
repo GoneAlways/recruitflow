@@ -1,9 +1,11 @@
 node_modules/
 .next/
 out/
+android/
 venv/
 __pycache__/
 *.pyc
 .env
 *.db
 .DS_Store
+local.properties

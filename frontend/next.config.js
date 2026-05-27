@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",           // 静态导出 → out/ 目录
-  images: { unoptimized: true }, // GitHub Pages 不支持 Next.js 图片优化
+  output: "export",
+  trailingSlash: true,          // WebView 兼容
+  assetPrefix: "./",            // 相对路径加载资源
+  images: { unoptimized: true },
 };
 
 module.exports = nextConfig;
