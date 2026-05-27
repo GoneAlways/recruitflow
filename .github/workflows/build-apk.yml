@@ -43,12 +43,15 @@ jobs:
         run: npx cap add android
 
       - name: Setup Android SDK
-        run: |
-          echo "sdk.dir=$ANDROID_HOME" > frontend/android/local.properties
-          yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses 2>/dev/null || true
-          echo "ANDROID_HOME=$ANDROID_HOME"
         env:
           ANDROID_HOME: /usr/local/lib/android/sdk
+        run: |
+          echo "sdk.dir=$ANDROID_HOME" > frontend/android/local.properties
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          # Install required SDK platforms and build tools
+          yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses 2>/dev/null || true
+          $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platforms;android-35" "build-tools;35.0.0" 2>&1 || true
+          $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --list 2>&1 | head -5
 
       - name: Capacitor sync
         working-directory: frontend
@@ -56,14 +59,24 @@ jobs:
 
       - name: Build APK (debug)
         working-directory: frontend/android
-        run: ./gradlew assembleDebug --no-daemon --stacktrace
+        run: |
+          echo "=== Gradle Version ==="
+          ./gradlew --version 2>&1 || true
+          echo "=== Build ==="
+          ./gradlew assembleDebug --no-daemon --info 2>&1
         env:
           ANDROID_HOME: /usr/local/lib/android/sdk
 
+      - name: List APKs
+        if: always()
+        run: find frontend/android -name "*.apk" 2>/dev/null || echo "No APK found"
+
       - name: Copy APK
+        if: success()
         run: cp frontend/android/app/build/outputs/apk/debug/app-debug.apk recruitflow.apk
 
       - name: Publish APK to GitHub Releases
+        if: success()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
