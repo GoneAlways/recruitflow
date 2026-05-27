@@ -42,13 +42,21 @@ jobs:
         working-directory: frontend
         run: npx cap add android
 
+      - name: Setup Android SDK
+        run: |
+          echo "sdk.dir=$ANDROID_HOME" > frontend/android/local.properties
+          yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses 2>/dev/null || true
+          echo "ANDROID_HOME=$ANDROID_HOME"
+        env:
+          ANDROID_HOME: /usr/local/lib/android/sdk
+
       - name: Capacitor sync
         working-directory: frontend
         run: npx cap sync android
 
       - name: Build APK (debug)
         working-directory: frontend/android
-        run: ./gradlew assembleDebug
+        run: ./gradlew assembleDebug --no-daemon --stacktrace
         env:
           ANDROID_HOME: /usr/local/lib/android/sdk
 
