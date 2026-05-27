@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RecruitFlow - 登录</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#da7d4c",
+                        "on-primary-fixed": "#002020",
+                        "status-pending": "#FF7D00",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#ecf2f1",
+                        "on-surface": "#171d1d",
+                        "background": "#f5fafa",
+                        "surface-container-low": "#eff5f4",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f5fafa",
+                        "on-background": "#171d1d",
+                        "tertiary-fixed": "#ffdbcb",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#006a6a",
+                        "on-tertiary-fixed": "#341100",
+                        "secondary": "#5b5e68",
+                        "surface-container-high": "#e4e9e9",
+                        "inverse-surface": "#2c3231",
+                        "outline-variant": "#bcc9c9",
+                        "primary": "#006a6a",
+                        "success-mint": "#00A6A7",
+                        "primary-container": "#00a6a7",
+                        "surface-container": "#e9efee",
+                        "primary-fixed": "#7af5f6",
+                        "on-error": "#ffffff",
+                        "outline": "#6c7a79",
+                        "secondary-container": "#dcdfea",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#c3c6d1",
+                        "on-surface-variant": "#3d4949",
+                        "on-primary-fixed-variant": "#004f50",
+                        "surface-dim": "#d5dbda",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#5bd9d9",
+                        "primary-fixed-dim": "#5bd9d9",
+                        "secondary-fixed": "#dfe2ed",
+                        "surface-variant": "#dee4e3",
+                        "status-rejected": "#F53F3F",
+                        "on-secondary-fixed": "#181c23",
+                        "background-surface": "#F7F8FA",
+                        "on-primary-container": "#003434",
+                        "tertiary-fixed-dim": "#ffb692",
+                        "on-tertiary-container": "#521e00",
+                        "tertiary": "#96481c",
+                        "on-tertiary-fixed-variant": "#783204",
+                        "status-offered": "#00B42A",
+                        "surface": "#f5fafa",
+                        "border-subtle": "#E5E6EB",
+                        "surface-container-highest": "#dee4e3",
+                        "on-secondary-container": "#5f636c",
+                        "on-secondary-fixed-variant": "#434750"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-gap": "8px",
+                        "margin-mobile": "16px",
+                        "gutter-sm": "12px",
+                        "unit": "4px",
+                        "margin-desktop": "24px",
+                        "gutter-md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', 'Microsoft YaHei', sans-serif;
+            background-color: #F7F8FA;
+        }
+        .login-card-shadow {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+        .focused-glow:focus-within {
+            box-shadow: 0 0 0 2px rgba(0, 106, 106, 0.2);
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen items-center justify-center p-margin-mobile md:p-margin-desktop">
+<!-- Subtle Background Decoration -->
+<div class="fixed inset-0 pointer-events-none overflow-hidden opacity-20">
+<div class="absolute -top-[10%] -left-[5%] w-[40%] h-[40%] bg-primary-container rounded-full blur-[120px]"></div>
+<div class="absolute -bottom-[10%] -right-[5%] w-[40%] h-[40%] bg-secondary-container rounded-full blur-[120px]"></div>
+</div>
+<!-- Main Content Container -->
+<main class="w-full max-w-[420px] z-10">
+<!-- Logo & Branding Section -->
+<section class="flex flex-col items-center mb-10 space-y-stack-gap">
+<div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center shadow-lg transform transition-transform hover:scale-105 duration-300">
+<span class="material-symbols-outlined text-on-primary !text-[32px]" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary tracking-tight">RecruitFlow</h1>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80">加速您的职业旅程</p>
+</section>
+<!-- Login Form Card -->
+<div class="bg-surface-container-lowest rounded-xl p-8 login-card-shadow border border-border-subtle">
+<form class="space-y-6" id="loginForm">
+<!-- Phone Number Input Group -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1" for="phone">手机号</label>
+<div class="flex items-center gap-2 p-1 border border-border-subtle rounded-xl bg-surface-container-low transition-all duration-200 focused-glow">
+<div class="flex items-center gap-1 px-3 border-r border-border-subtle cursor-pointer hover:bg-surface-container-high rounded-lg transition-colors py-2">
+<span class="font-body-md text-body-md text-on-surface font-semibold">+86</span>
+<span class="material-symbols-outlined text-outline text-[18px]">expand_more</span>
+</div>
+<input class="w-full bg-transparent border-none focus:ring-0 font-body-lg text-body-lg py-2 px-1 text-on-surface placeholder:text-outline" id="phone" placeholder="请输入手机号" required="" type="tel"/>
+</div>
+</div>
+<!-- Primary Action -->
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-xl hover:bg-on-primary-fixed-variant active:scale-95 transition-all duration-200 shadow-sm" type="submit">
+                获取验证码
+            </button>
+<!-- Divider -->
+<div class="relative flex items-center py-2">
+<div class="flex-grow border-t border-border-subtle"></div>
+<span class="flex-shrink mx-4 font-label-sm text-label-sm text-outline uppercase tracking-wider">或其他登录方式</span>
+<div class="flex-grow border-t border-border-subtle"></div>
+</div>
+<!-- Social Login Options -->
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 border border-border-subtle py-3 rounded-xl hover:bg-surface-container-low active:scale-95 transition-all duration-200" type="button">
+<img alt="微信" class="w-5 h-5 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5sZHPBQI6gFdPZm3-dg7CSiH2k6fG_tMI7Js2Slnt36Qkyg2nfOKScH2fFrchbsJbNo6EJ36GMcICi-vnP4543MNioSNR8DP5AxOuq3TV9Jewu_M6g_J1VodaiS4sNTBdKv5jJi4_6m3dOYGc0bKSAuz3kehifwljEj9VlSEqJqSAw-anCo0josx6QK7hcJVGFZ_eVAGMMIOsE8v1v0vCVcJp2UdCzuFwvcHScwdFXR_skijrE7GGZPYvEb7GSb6UToB0MbmLgOQ"/>
+<span class="font-label-md text-label-md text-on-surface-variant">微信</span>
+</button>
+<button class="flex items-center justify-center gap-2 border border-border-subtle py-3 rounded-xl hover:bg-surface-container-low active:scale-95 transition-all duration-200" type="button">
+<span class="material-symbols-outlined text-on-surface-variant !text-[20px]">mail</span>
+<span class="font-label-md text-label-md text-on-surface-variant">邮箱</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Terms & Privacy -->
+<div class="mt-8 flex items-start gap-3 px-2">
+<div class="pt-0.5">
+<input class="w-4 h-4 rounded border-border-subtle text-primary focus:ring-primary-container cursor-pointer" id="privacy" type="checkbox"/>
+</div>
+<label class="font-body-md text-body-md text-on-surface-variant leading-tight cursor-pointer" for="privacy">
+            我已阅读并同意
+            <a class="text-primary font-semibold hover:underline" href="#">用户协议</a>
+            和
+            <a class="text-primary font-semibold hover:underline" href="#">隐私政策</a>。
+        </label>
+</div>
+</main>
+<!-- Success Feedback Overlay (Hidden by default) -->
+<div class="fixed bottom-10 left-1/2 -translate-x-1/2 transform scale-90 opacity-0 pointer-events-none transition-all duration-300 bg-inverse-surface text-inverse-on-surface px-6 py-3 rounded-full flex items-center gap-3 shadow-lg z-50" id="toast">
+<span class="material-symbols-outlined text-success-mint">check_circle</span>
+<span class="font-label-md text-label-md">验证码已发送</span>
+</div>
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const privacyChecked = document.getElementById('privacy').checked;
+        
+        if (!privacyChecked) {
+            alert('请先勾选并同意用户协议和隐私政策以继续。');
+            return;
+        }
+
+        // Simulate code sent
+        const toast = document.getElementById('toast');
+        toast.classList.remove('scale-90', 'opacity-0', 'pointer-events-none');
+        toast.classList.add('scale-100', 'opacity-100');
+        
+        setTimeout(() => {
+            toast.classList.add('scale-90', 'opacity-0', 'pointer-events-none');
+            toast.classList.remove('scale-100', 'opacity-100');
+        }, 3000);
+    });
+
+    // Add some atmospheric micro-interactions to inputs
+    const inputs = document.querySelectorAll('input');
+    inputs.forEach(input => {
+        input.addEventListener('focus', () => {
+            input.parentElement.classList.add('border-primary');
+        });
+        input.addEventListener('blur', () => {
+            input.parentElement.classList.remove('border-primary');
+        });
+    });
+</script>
+</body></html>

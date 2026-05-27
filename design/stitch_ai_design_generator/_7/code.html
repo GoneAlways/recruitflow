@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>我的 - RecruitFlow</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Smooth scrolling and hide scrollbar */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Glassmorphism utility */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed": "#dfe2ed",
+                        "surface": "#f5fafa",
+                        "surface-variant": "#dee4e3",
+                        "border-subtle": "#E5E6EB",
+                        "secondary-fixed-dim": "#c3c6d1",
+                        "on-primary-fixed-variant": "#004f50",
+                        "primary-fixed": "#7af5f6",
+                        "on-secondary-fixed-variant": "#434750",
+                        "surface-container-low": "#eff5f4",
+                        "surface-container": "#e9efee",
+                        "surface-dim": "#d5dbda",
+                        "tertiary-container": "#da7d4c",
+                        "surface-container-high": "#e4e9e9",
+                        "primary-fixed-dim": "#5bd9d9",
+                        "on-secondary-fixed": "#181c23",
+                        "primary": "#006a6a",
+                        "outline-variant": "#bcc9c9",
+                        "on-secondary-container": "#5f636c",
+                        "surface-bright": "#f5fafa",
+                        "status-pending": "#FF7D00",
+                        "on-secondary": "#ffffff",
+                        "background-surface": "#F7F8FA",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#003434",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#96481c",
+                        "outline": "#6c7a79",
+                        "inverse-on-surface": "#ecf2f1",
+                        "surface-container-lowest": "#ffffff",
+                        "status-offered": "#00B42A",
+                        "success-mint": "#00A6A7",
+                        "status-rejected": "#F53F3F",
+                        "tertiary-fixed": "#ffdbcb",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#006a6a",
+                        "inverse-surface": "#2c3231",
+                        "on-tertiary-fixed-variant": "#783204",
+                        "on-surface": "#171d1d",
+                        "on-primary-fixed": "#002020",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#521e00",
+                        "primary-container": "#00a6a7",
+                        "on-tertiary-fixed": "#341100",
+                        "inverse-primary": "#5bd9d9",
+                        "surface-container-highest": "#dee4e3",
+                        "on-surface-variant": "#3d4949",
+                        "background": "#f5fafa",
+                        "tertiary-fixed-dim": "#ffb692",
+                        "secondary": "#5b5e68",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "on-background": "#171d1d",
+                        "secondary-container": "#dcdfea"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-desktop": "24px",
+                        "gutter-md": "16px",
+                        "stack-gap": "8px",
+                        "margin-mobile": "16px",
+                        "gutter-sm": "12px",
+                        "unit": "4px"
+                    },
+                    fontFamily: {
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    fontSize: {
+                        "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "label-sm": ["11px", { lineHeight: "14px", fontWeight: "500" }],
+                        "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+                        "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+                        "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-surface text-on-surface antialiased pb-24 md:pb-0 h-screen overflow-y-auto">
+<!-- Top App Bar (Desktop Only - Mobile handled by design) -->
+<header class="hidden md:flex justify-between items-center w-full px-margin-desktop h-14 bg-surface docked full-width top-0 z-50 transition-colors duration-200">
+<div class="flex items-center gap-4">
+<span class="text-headline-md font-headline-md font-bold text-primary">RecruitFlow</span>
+</div>
+<div class="flex items-center gap-4">
+<nav class="flex gap-6">
+<a class="text-on-surface-variant hover:bg-surface-container-high px-3 py-2 rounded-md font-body-md text-body-md transition-colors duration-200" href="#">Job</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high px-3 py-2 rounded-md font-body-md text-body-md transition-colors duration-200" href="#">Message</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high px-3 py-2 rounded-md font-body-md text-body-md transition-colors duration-200" href="#">Resume</a>
+<a class="text-primary hover:bg-surface-container-high px-3 py-2 rounded-md font-body-md text-body-md transition-colors duration-200" href="#">Me</a>
+</nav>
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="search">search</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary-container overflow-hidden">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a young asian man with short dark hair, wearing a clean white t-shirt. The background is a soft, light blue studio backdrop. The lighting is even and bright, typical of a modern corporate profile picture. The mood is approachable, confident, and minimalist, fitting a sleek corporate modern UI design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd3S2faR1al8RbdEBfvYQAYsxMvJhLEJJqKFhXUOohn0dqPyFoVEwrtjA8AfKMSDGvukiSV0ClLYdCuj8AhlvKfww9kcYZ-L3O9xw6OA0s-3_v67S82jD5T2ZU_xS5b3KHO9QbEDqEO6ybWkTDst79uFaDXCZRi7AvpoTVFaM_7NoOcFRX5hRy74NFTtt5CZBNMc1OXkwGO1cYEmHxgdEsYk43MqX52CxeDfoQnlZoiMEo-uy-qoSHmUH6_gjKYOeBUmUam4O0faY"/>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop pt-8 pb-12 flex flex-col md:flex-row gap-6">
+<!-- Left Column (Profile Summary & Stats) -->
+<div class="w-full md:w-5/12 flex flex-col gap-6">
+<!-- Bento Profile Card -->
+<section class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-border-subtle relative overflow-hidden group">
+<!-- Abstract BG Element -->
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-primary-fixed-dim/20 rounded-full blur-2xl group-hover:bg-primary-container/30 transition-colors duration-500"></div>
+<div class="flex items-center gap-4 mb-6 relative z-10">
+<div class="w-16 h-16 rounded-full border-2 border-primary-container overflow-hidden p-0.5">
+<img alt="Avatar" class="w-full h-full object-cover rounded-full" data-alt="A professional headshot of a young asian man with short dark hair, wearing a clean white t-shirt. The background is a soft, light blue studio backdrop. The lighting is even and bright, typical of a modern corporate profile picture. The mood is approachable, confident, and minimalist, fitting a sleek corporate modern UI design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjzwRrs5Ned-snhd1cTtoveVibx5MBL9OEHee67SBCgWWoXhD8m-Yd3MbWKnQuuljl932yhJ6_dI_qXQpCyzK5SCjMf_fU-8vGI-CFzW4phlD4P3cTT4c1lnEZeedq4XbRP8HGyOPIpl7jqu-CdWPTezz3-jLPSXs5Bn-hPsvgFW5iItw0oq6sxC0PmPkY67ME2OqoPMSAYGK212OYFhuHeGHCKe5Awme0BmVMzvWtuJ0kIGiqW-f73AeIOjJ6-q2m4v2_rIAmuU8"/>
+</div>
+<div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-1">张伟</h1>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1">
+                            高级产品经理 <span class="w-1 h-1 rounded-full bg-border-subtle inline-block mx-1"></span> 离职-随时到岗
+                        </p>
+</div>
+</div>
+<!-- Completeness Progress -->
+<div class="mb-4 relative z-10">
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-md text-label-md text-on-surface-variant">微简历完成度</span>
+<span class="font-label-md text-label-md text-primary">85%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[85%] rounded-full"></div>
+</div>
+</div>
+<button class="w-full py-2 bg-primary-container text-on-primary-container rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity flex items-center justify-center gap-2 relative z-10">
+<span class="material-symbols-outlined text-[16px]" data-icon="edit_document">edit_document</span>
+                    编辑在线简历
+                </button>
+</section>
+<!-- Quick Stats Bento Grid -->
+<section class="grid grid-cols-3 gap-3">
+<div class="bg-surface-container-lowest rounded-xl p-4 flex flex-col items-center justify-center border border-border-subtle shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:border-primary/30 transition-colors cursor-pointer">
+<span class="font-headline-md text-headline-md text-on-surface mb-1">42</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">已投递</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-4 flex flex-col items-center justify-center border border-border-subtle shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:border-primary/30 transition-colors cursor-pointer">
+<span class="font-headline-md text-headline-md text-on-surface mb-1">15</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">被查看</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-4 flex flex-col items-center justify-center border border-border-subtle shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:border-primary/30 transition-colors cursor-pointer">
+<span class="font-headline-md text-headline-md text-on-surface mb-1">8</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">收藏职位</span>
+</div>
+</section>
+<!-- Premium Upgrade Ad (Glassmorphism) -->
+<div class="relative rounded-xl p-5 border border-primary/20 overflow-hidden bg-gradient-to-br from-surface-bright to-surface-container-low group cursor-pointer">
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent"></div>
+<div class="flex items-center justify-between relative z-10">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-tertiary-container" data-icon="workspace_premium" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+                            职场加速包
+                        </h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">提升3倍简历曝光率</p>
+</div>
+<span class="font-label-md text-label-md text-primary bg-primary/10 px-3 py-1.5 rounded-full group-hover:bg-primary group-hover:text-on-primary transition-colors">立即开启</span>
+</div>
+</div>
+</div>
+<!-- Right Column (Navigation & Settings) -->
+<div class="w-full md:w-7/12 flex flex-col gap-4">
+<!-- Sections List -->
+<section class="bg-surface-container-lowest rounded-xl border border-border-subtle shadow-[0_2px_8px_rgba(0,0,0,0.04)] overflow-hidden">
+<a class="flex items-center justify-between p-4 border-b border-border-subtle hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="description">description</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">附件简历</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 border-b border-border-subtle hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings_suggest">settings_suggest</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">求职偏好</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 border-b border-border-subtle hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="lock">lock</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">隐私设置</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 border-b border-border-subtle hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">帮助与客服</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">系统设置</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+</section>
+<!-- Switch Identity Action -->
+<button class="mt-4 flex items-center justify-center gap-2 p-4 rounded-xl border-2 border-border-subtle bg-transparent text-secondary hover:text-primary hover:border-primary hover:bg-surface-container-low transition-all duration-200 group">
+<span class="material-symbols-outlined group-hover:rotate-180 transition-transform duration-500" data-icon="swap_horiz">swap_horiz</span>
+<span class="font-body-md text-body-md font-medium">切换为招聘者身份</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-16 px-margin-mobile pb-safe bg-surface-container-lowest border-t border-border-subtle shadow-md z-50 rounded-t-xl transition-colors">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-container transition-colors w-16" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="work">work</span>
+<span class="font-label-md text-label-md">Job</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-container transition-colors w-16" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-md text-label-md">Message</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-container transition-colors w-16" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="description">description</span>
+<span class="font-label-md text-label-md">Resume</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary scale-95 transition-transform w-16" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-md text-label-md">Me</span>
+</a>
+</nav>
+</body></html>

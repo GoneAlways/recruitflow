@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#da7d4c",
+                    "on-primary-fixed": "#002020",
+                    "status-pending": "#FF7D00",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "inverse-on-surface": "#ecf2f1",
+                    "on-surface": "#171d1d",
+                    "background": "#f5fafa",
+                    "surface-container-low": "#eff5f4",
+                    "on-secondary": "#ffffff",
+                    "surface-bright": "#f5fafa",
+                    "on-background": "#171d1d",
+                    "tertiary-fixed": "#ffdbcb",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#006a6a",
+                    "on-tertiary-fixed": "#341100",
+                    "secondary": "#5b5e68",
+                    "surface-container-high": "#e4e9e9",
+                    "inverse-surface": "#2c3231",
+                    "outline-variant": "#bcc9c9",
+                    "primary": "#006a6a",
+                    "success-mint": "#00A6A7",
+                    "primary-container": "#00a6a7",
+                    "surface-container": "#e9efee",
+                    "primary-fixed": "#7af5f6",
+                    "on-error": "#ffffff",
+                    "outline": "#6c7a79",
+                    "secondary-container": "#dcdfea",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#c3c6d1",
+                    "on-surface-variant": "#3d4949",
+                    "on-primary-fixed-variant": "#004f50",
+                    "surface-dim": "#d5dbda",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#5bd9d9",
+                    "primary-fixed-dim": "#5bd9d9",
+                    "secondary-fixed": "#dfe2ed",
+                    "surface-variant": "#dee4e3",
+                    "status-rejected": "#F53F3F",
+                    "on-secondary-fixed": "#181c23",
+                    "background-surface": "#F7F8FA",
+                    "on-primary-container": "#003434",
+                    "tertiary-fixed-dim": "#ffb692",
+                    "on-tertiary-container": "#521e00",
+                    "tertiary": "#96481c",
+                    "on-tertiary-fixed-variant": "#783204",
+                    "status-offered": "#00B42A",
+                    "surface": "#f5fafa",
+                    "border-subtle": "#E5E6EB",
+                    "surface-container-highest": "#dee4e3",
+                    "on-secondary-container": "#5f636c",
+                    "on-secondary-fixed-variant": "#434750"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-gap": "8px",
+                    "margin-mobile": "16px",
+                    "gutter-sm": "12px",
+                    "unit": "4px",
+                    "margin-desktop": "24px",
+                    "gutter-md": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { background-color: #F7F8FA; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(229, 230, 235, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body-md text-on-surface antialiased">
+<!-- TopAppBar Navigation -->
+<header class="bg-surface dark:bg-on-surface-variant docked full-width top-0 z-50 flex justify-between items-center w-full px-margin-mobile h-14 sticky">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden">
+<img alt="Alex Chen" class="w-full h-full object-cover" data-alt="A professional headshot of a young designer with a warm smile, set against a clean, minimalist studio background with soft natural lighting. The image maintains a high-key, modern aesthetic with a color palette dominated by soft greys and crisp whites, echoing a professional recruitment platform vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYfj9LMIneutqXPgsj7ECou8F6-RoL9EhoHbPdm7OFpBSzBrVnxaGlX2rt-xVu26BaGtJFHnyfOeyhamrBOguvPCfQLUPPwM8Gn1jq8tUUamdoiqVXZhXpwsYn5nkM6Feff6abxUOZ_llXTfYAndb420byMYifVtf4vGmmrSSe8K4RtpBc0Zrp2rsQLNLn35U877h-kKH9e5F8fIhZJ0uqMm7bOSGLj5XdgpiwUkMkaFDXgR3Mn_IY-SoAOPIPnx-PczO80gqvAfw"/>
+</div>
+<h1 class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed">RecruitFlow</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed cursor-pointer transition-colors duration-200 hover:bg-surface-container-high p-2 rounded-full" data-icon="search">search</span>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-margin-mobile pt-gutter-md pb-24 md:pb-12">
+<!-- Profile Header Section (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-gap mb-gutter-md">
+<!-- Main Info Card -->
+<div class="md:col-span-2 bg-surface-container-lowest rounded-xl p-gutter-md shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-border-subtle flex flex-col sm:flex-row gap-6 items-start">
+<div class="relative">
+<div class="w-24 h-24 rounded-2xl bg-secondary-container flex items-center justify-center overflow-hidden border-2 border-primary-container">
+<img alt="Alex Chen Profile" class="w-full h-full object-cover" data-alt="Close-up professional portrait of a male product designer in a bright, airy office. He is wearing a modern charcoal shirt. The lighting is diffused and professional, creating soft shadows. The overall aesthetic is clean, corporate-modern, and trustworthy, with subtle blue and teal accents in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSwTTFxQ6mbSVm71jaVXev_AV1WUnWodjAmsKCDXi8Ek1USiz_QEQW-1c3WStg_MOrSkXbKvrVqglOj-uv5Hgv1BSjzTbnkbWx5ZVZAyRI6o_jsSmzNHpWH2DB9I9nupLUGmXtbWoglPprXAGITHGtVkQPvnj3GOqUIF2pQXASqw3UcUg00VNaZFNzuoBoYbX3TUUGiuK-VJkreI3g2ZS2DZBIZGqCmoFLVaLmDi1IUAKMVzfdTSrKp1nRabOfTf9uA5jom7NW70g"/>
+</div>
+<button class="absolute -bottom-2 -right-2 bg-primary text-on-primary w-8 h-8 rounded-full flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+</button>
+</div>
+<div class="flex-1 space-y-2">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Alex Chen</h2>
+<p class="font-body-md text-on-surface-variant">产品设计师 • 5年以上经验</p>
+</div>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="px-3 py-1 rounded-full bg-primary-fixed-dim/20 text-on-primary-fixed-variant text-label-md">加利福尼亚州，旧金山</span>
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-label-md">接受远程</span>
+</div>
+</div>
+</div>
+<!-- Completion Card -->
+<div class="bg-primary dark:bg-primary-container rounded-xl p-gutter-md text-on-primary dark:text-on-primary-container flex flex-col justify-between shadow-lg">
+<div class="flex justify-between items-start">
+<span class="font-label-md">资料完善度</span>
+<span class="font-headline-md">85%</span>
+</div>
+<div class="w-full bg-on-primary/20 h-2 rounded-full mt-4 overflow-hidden">
+<div class="bg-white h-full transition-all duration-1000" style="width: 85%"></div>
+</div>
+<p class="font-label-sm mt-4 opacity-90">完善您的“教育经历”即可达到100%，并获得2倍的曝光率。</p>
+</div>
+</div>
+<!-- Personal Summary -->
+<section class="mb-gutter-md">
+<div class="bg-surface-container-lowest rounded-xl p-gutter-md border border-border-subtle">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="description">description</span>
+                        个人简介
+                    </h3>
+<button class="text-primary font-label-md hover:underline">编辑</button>
+</div>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+                    热衷于创造以用户为中心的数字体验的产品设计师。在为招聘和金融科技平台开发直观界面方面拥有丰富的经验。精通 Figma、React，并擅长构建可扩展的设计系统，以弥合设计与工程之间的差距。
+                </p>
+</div>
+</section>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-5 gap-gutter-md">
+<!-- Left Column: Experience & Education -->
+<div class="lg:col-span-3 space-y-gutter-md">
+<!-- Work Experience -->
+<div class="bg-surface-container-lowest rounded-xl p-gutter-md border border-border-subtle">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-on-surface">工作经验</h3>
+<button class="flex items-center gap-1 bg-primary-container text-on-primary-container px-3 py-1.5 rounded-full font-label-md transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                            添加
+                        </button>
+</div>
+<!-- Experience List -->
+<div class="space-y-6 relative before:content-[''] before:absolute before:left-[19px] before:top-2 before:bottom-2 before:w-[2px] before:bg-surface-container">
+<!-- Job Item 1 -->
+<div class="relative pl-12">
+<div class="absolute left-0 top-1 w-10 h-10 rounded-full bg-white border-2 border-primary-container flex items-center justify-center z-10 overflow-hidden">
+<img alt="Google" class="w-6 h-6 object-contain" data-alt="Minimalist company logo for a major tech corporation, featuring clean geometric shapes and professional branding colors. The style is modern, corporate, and flat, designed to fit within a small circular container in a recruiter interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQSwe9ESAubgNVcdZDcZ1W7eHWDdUC-J0XlfpoABsHI-sPevI9ph8DtBO59Vxx8nWYzW4D5iz0FN1V-HNkh9QAvYuU4860HkuZ_5DCYWPDh9TV9fVRjhCkNUC1iFLZZdD9swZPo3DYa7AmhQnfOfBEcnKO1hDWooP0mo6fLMjJupVlEDuADubK3h03lRlAeGonrtD_x819vfc7F0FzaJazhKhm797NWpATWYYehW7QiW2pK6Xzp8RJ_B8oScjETlb-XwBMIkKgyz0"/>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between">
+<h4 class="font-headline-md text-on-surface text-[16px]">高级产品设计师</h4>
+<span class="text-label-md text-primary font-semibold">$160k - $190k</span>
+</div>
+<p class="text-label-md text-on-surface-variant">谷歌 • 2021年1月 - 至今</p>
+<p class="font-body-md text-on-surface-variant mt-2">主导了内部招聘仪表板的重新设计，使招聘人员的效率提升了25%。</p>
+<div class="flex gap-2 mt-2">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant text-label-sm">Figma</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant text-label-sm">领导力</span>
+</div>
+</div>
+</div>
+<!-- Job Item 2 -->
+<div class="relative pl-12">
+<div class="absolute left-0 top-1 w-10 h-10 rounded-full bg-white border-2 border-border-subtle flex items-center justify-center z-10 overflow-hidden">
+<img alt="Stripe" class="w-6 h-6 object-contain" data-alt="A professional corporate logo with a clean, tech-focused aesthetic. Minimalist lines and a professional blue-tinted color palette. High clarity, optimized for UI display in a professional experience list." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaRTQ19wuTLaAgQn8NsjvsG3FZU-aMs1uyk17ddMPSE106SyvN1jaEzGEqd42fRlRXy_BV2sQlqt6hXbu18uolQVbFWNewW99DjAgfe8eHhw5EZxewyb1R8tbtED6r10z4F8Pugt2gbqRQhbAVQAM8fwmgUcX1TM7OiQuYVTtoImIa-B-oelJKjot_BjyKuRWYuxHH7NTRTPKS3XRoABHJwnDeIjTQmtuzzoh7yh9o8bzSNa0iB9VHXs7O_fVAHpWmEP38Zqnw8Zk"/>
+</div>
+<div class="flex flex-col gap-1">
+<h4 class="font-headline-md text-on-surface text-[16px]">产品设计师</h4>
+<p class="text-label-md text-on-surface-variant">Stripe • 2018年3月 - 2020年12月</p>
+<p class="font-body-md text-on-surface-variant mt-2">为全球市场的小型企业集成设计了端到端支付流程。</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Education -->
+<div class="bg-surface-container-lowest rounded-xl p-gutter-md border border-border-subtle">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-on-surface">教育经历</h3>
+<button class="flex items-center gap-1 bg-secondary-container text-on-secondary-container px-3 py-1.5 rounded-full font-label-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                            添加
+                        </button>
+</div>
+<div class="space-y-4">
+<div class="flex gap-4 p-3 rounded-lg hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 bg-surface-container-high rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="school">school</span>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface text-[14px]">斯坦福大学</h4>
+<p class="text-body-md text-on-surface-variant">符号系统理学学士</p>
+<p class="text-label-sm text-outline">2014 - 2018</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Preferences & Settings -->
+<div class="lg:col-span-2 space-y-gutter-md">
+<!-- Job Preferences -->
+<div class="bg-surface-container-lowest rounded-xl p-gutter-md border border-border-subtle h-fit">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-md text-on-surface">求职意向</h3>
+<span class="material-symbols-outlined text-outline cursor-pointer" data-icon="settings">settings</span>
+</div>
+<div class="space-y-stack-gap">
+<div class="p-3 rounded-lg border border-border-subtle bg-background-surface">
+<p class="text-label-sm text-outline mb-1">期望职位</p>
+<p class="text-body-md font-semibold">资深产品设计师</p>
+</div>
+<div class="p-3 rounded-lg border border-border-subtle bg-background-surface">
+<p class="text-label-sm text-outline mb-1">期望年薪</p>
+<p class="text-body-md font-semibold">$180,000 - $220,000</p>
+</div>
+<div class="p-3 rounded-lg border border-border-subtle bg-background-surface">
+<p class="text-label-sm text-outline mb-1">工作地点</p>
+<p class="text-body-md font-semibold">旧金山，纽约，伦敦</p>
+</div>
+<div class="p-3 rounded-lg border border-border-subtle bg-background-surface">
+<p class="text-label-sm text-outline mb-1">工作形式</p>
+<div class="flex gap-2 mt-1">
+<span class="px-2 py-0.5 rounded-full bg-success-mint/10 text-success-mint text-label-sm">全职</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary/10 text-tertiary text-label-sm">远程</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Identity Settings (As defined in JSON) -->
+<div class="bg-surface-container-lowest rounded-xl border border-border-subtle overflow-hidden">
+<div class="p-4 bg-surface-container">
+<h4 class="font-label-md text-on-surface">账户管理</h4>
+</div>
+<nav class="flex flex-col p-2">
+<a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-high transition-all text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+<span class="font-body-md">隐私设置</span>
+</a>
+<a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-high transition-all text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="settings_suggest">settings_suggest</span>
+<span class="font-body-md">偏好设置</span>
+</a>
+<a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-high transition-all text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="swap_horiz">swap_horiz</span>
+<span class="font-body-md">切换身份</span>
+</a>
+</nav>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed right-6 bottom-20 md:bottom-8 bg-primary text-on-primary w-14 h-14 rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 active:scale-95 z-40">
+<span class="material-symbols-outlined text-[28px]" data-icon="add">add</span>
+</button>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-16 px-margin-mobile pb-safe bg-surface-container-lowest dark:bg-inverse-surface border-t border-border-subtle shadow-md z-50">
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="work">work</span>
+<span class="font-label-md text-label-md">职位</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-md text-label-md">消息</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-label-md text-label-md">简历</span>
+</div>
+<div class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-md text-label-md">我的</span>
+</div>
+</nav>
+<script>
+        // Micro-interactions for profile progress
+        document.addEventListener('DOMContentLoaded', () => {
+            const progressBar = document.querySelector('.bg-white.h-full');
+            if(progressBar) {
+                setTimeout(() => {
+                    progressBar.style.width = '85%';
+                }, 300);
+            }
+
+            // Hover effect on cards
+            const cards = document.querySelectorAll('.bg-surface-container-lowest');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.classList.add('shadow-md');
+                    card.style.transition = 'all 0.3s ease';
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.classList.remove('shadow-md');
+                });
+            });
+        });
+    </script>
+</body></html>

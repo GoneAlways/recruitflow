@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>编辑教育经历 - RecruitFlow</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config Injection -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#dfe2ed",
+                    "surface": "#f5fafa",
+                    "surface-variant": "#dee4e3",
+                    "border-subtle": "#E5E6EB",
+                    "secondary-fixed-dim": "#c3c6d1",
+                    "on-primary-fixed-variant": "#004f50",
+                    "primary-fixed": "#7af5f6",
+                    "on-secondary-fixed-variant": "#434750",
+                    "surface-container-low": "#eff5f4",
+                    "surface-container": "#e9efee",
+                    "surface-dim": "#d5dbda",
+                    "tertiary-container": "#da7d4c",
+                    "surface-container-high": "#e4e9e9",
+                    "primary-fixed-dim": "#5bd9d9",
+                    "on-secondary-fixed": "#181c23",
+                    "primary": "#006a6a",
+                    "outline-variant": "#bcc9c9",
+                    "on-secondary-container": "#5f636c",
+                    "surface-bright": "#f5fafa",
+                    "status-pending": "#FF7D00",
+                    "on-secondary": "#ffffff",
+                    "background-surface": "#F7F8FA",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-container": "#003434",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#96481c",
+                    "outline": "#6c7a79",
+                    "inverse-on-surface": "#ecf2f1",
+                    "surface-container-lowest": "#ffffff",
+                    "status-offered": "#00B42A",
+                    "success-mint": "#00A6A7",
+                    "status-rejected": "#F53F3F",
+                    "tertiary-fixed": "#ffdbcb",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#006a6a",
+                    "inverse-surface": "#2c3231",
+                    "on-tertiary-fixed-variant": "#783204",
+                    "on-surface": "#171d1d",
+                    "on-primary-fixed": "#002020",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#521e00",
+                    "primary-container": "#00a6a7",
+                    "on-tertiary-fixed": "#341100",
+                    "inverse-primary": "#5bd9d9",
+                    "surface-container-highest": "#dee4e3",
+                    "on-surface-variant": "#3d4949",
+                    "background": "#f5fafa",
+                    "tertiary-fixed-dim": "#ffb692",
+                    "secondary": "#5b5e68",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-background": "#171d1d",
+                    "secondary-container": "#dcdfea"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "24px",
+                    "gutter-md": "16px",
+                    "stack-gap": "8px",
+                    "margin-mobile": "16px",
+                    "gutter-sm": "12px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter", "sans-serif"],
+                    "headline-lg": ["Inter", "sans-serif"],
+                    "label-sm": ["Inter", "sans-serif"],
+                    "headline-lg-mobile": ["Inter", "sans-serif"],
+                    "body-lg": ["Inter", "sans-serif"],
+                    "headline-md": ["Inter", "sans-serif"],
+                    "body-md": ["Inter", "sans-serif"]
+            },
+            "fontSize": {
+                    "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                    "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+                    "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                    "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                    "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                    "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }]
+            },
+            "boxShadow": {
+                'card-lift': '0 2px 8px rgba(0, 0, 0, 0.04)',
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Custom styles for native date picker appearance */
+        input[type="month"]::-webkit-calendar-picker-indicator {
+            background: transparent;
+            bottom: 0;
+            color: transparent;
+            cursor: pointer;
+            height: auto;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: auto;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-surface min-h-screen text-on-surface antialiased font-body-md">
+<!-- Top App Bar for Sub-page (Task Focused, hides Bottom Nav) -->
+<header class="sticky top-0 z-50 w-full h-14 bg-surface flex items-center justify-between px-margin-mobile border-b border-border-subtle/50 shadow-sm backdrop-blur-md bg-surface/90">
+<button aria-label="Go back" class="w-10 h-10 flex items-center justify-center -ml-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back_ios_new</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-surface font-semibold absolute left-1/2 -translate-x-1/2">编辑教育经历</h1>
+<div class="w-10 h-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-2xl mx-auto p-margin-mobile pb-32">
+<!-- Form Container: Level 1 Elevation -->
+<div class="bg-surface-container-lowest rounded-xl p-gutter-md shadow-card-lift border border-border-subtle flex flex-col gap-gutter-md relative overflow-hidden">
+<!-- Subtle top accent line -->
+<div class="absolute top-0 left-0 w-full h-1 bg-primary/20"></div>
+<!-- Field: School Name -->
+<div class="flex flex-col gap-stack-gap">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1" for="school-name">
+                    学校名称 <span class="text-error">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">account_balance</span>
+<input class="w-full h-12 pl-12 pr-4 rounded-xl border border-border-subtle bg-background-surface text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-outline-variant" id="school-name" placeholder="请输入学校名称" type="text" value="北京大学"/>
+</div>
+</div>
+<!-- Field: Major -->
+<div class="flex flex-col gap-stack-gap">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1" for="major">
+                    专业 <span class="text-error">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">book</span>
+<input class="w-full h-12 pl-12 pr-4 rounded-xl border border-border-subtle bg-background-surface text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-outline-variant" id="major" placeholder="请输入专业名称" type="text" value="计算机科学与技术"/>
+</div>
+</div>
+<!-- 2-Column Grid for Degree & Time on larger screens, Stack on mobile -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-md">
+<!-- Field: Degree Picker -->
+<div class="flex flex-col gap-stack-gap">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1" for="degree">
+                        学历 <span class="text-error">*</span>
+</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none group-focus-within:text-primary transition-colors">school</span>
+<select class="w-full h-12 pl-12 pr-10 rounded-xl border border-border-subtle bg-background-surface text-on-surface font-body-md text-body-md appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all cursor-pointer" id="degree">
+<option selected="" value="bachelor">本科</option>
+<option value="master">硕士</option>
+<option value="phd">博士</option>
+<option value="college">大专</option>
+<option value="other">其他</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none group-focus-within:text-primary transition-colors">expand_more</span>
+</div>
+</div>
+<!-- Field: Graduation Time -->
+<div class="flex flex-col gap-stack-gap">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1" for="grad-time">
+                        毕业时间 <span class="text-error">*</span>
+</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none group-focus-within:text-primary transition-colors">calendar_month</span>
+<input class="w-full h-12 pl-12 pr-4 rounded-xl border border-border-subtle bg-background-surface text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all cursor-pointer relative" id="grad-time" type="month" value="2022-06"/>
+</div>
+</div>
+</div>
+<!-- Optional: Description/Experience Details -->
+<div class="flex flex-col gap-stack-gap mt-2">
+<label class="font-label-md text-label-md text-on-surface-variant" for="description">
+                    在校经历 (选填)
+                </label>
+<textarea class="w-full p-4 rounded-xl border border-border-subtle bg-background-surface text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none placeholder:text-outline-variant" id="description" placeholder="描述您的主修课程、荣誉奖项或在校活动..." rows="3"></textarea>
+</div>
+</div>
+</main>
+<!-- Fixed Bottom Action Area -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-container-lowest border-t border-border-subtle p-margin-mobile pb-safe z-40 shadow-[0_-4px_16px_rgba(0,0,0,0.02)]">
+<div class="max-w-2xl mx-auto flex gap-gutter-sm">
+<button class="flex-1 h-12 bg-primary text-on-primary rounded-xl font-label-md text-label-md flex items-center justify-center hover:bg-surface-tint transition-all active:scale-[0.98] shadow-sm">
+                保存
+            </button>
+</div>
+</div>
+</body></html>

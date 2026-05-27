@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RecruitFlow - 投递跟踪</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#da7d4c",
+                    "on-primary-fixed": "#002020",
+                    "status-pending": "#FF7D00",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "inverse-on-surface": "#ecf2f1",
+                    "on-surface": "#171d1d",
+                    "background": "#f5fafa",
+                    "surface-container-low": "#eff5f4",
+                    "on-secondary": "#ffffff",
+                    "surface-bright": "#f5fafa",
+                    "on-background": "#171d1d",
+                    "tertiary-fixed": "#ffdbcb",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#006a6a",
+                    "on-tertiary-fixed": "#341100",
+                    "secondary": "#5b5e68",
+                    "surface-container-high": "#e4e9e9",
+                    "inverse-surface": "#2c3231",
+                    "outline-variant": "#bcc9c9",
+                    "primary": "#006a6a",
+                    "success-mint": "#00A6A7",
+                    "primary-container": "#00a6a7",
+                    "surface-container": "#e9efee",
+                    "primary-fixed": "#7af5f6",
+                    "on-error": "#ffffff",
+                    "outline": "#6c7a79",
+                    "secondary-container": "#dcdfea",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#c3c6d1",
+                    "on-surface-variant": "#3d4949",
+                    "on-primary-fixed-variant": "#004f50",
+                    "surface-dim": "#d5dbda",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#5bd9d9",
+                    "primary-fixed-dim": "#5bd9d9",
+                    "secondary-fixed": "#dfe2ed",
+                    "surface-variant": "#dee4e3",
+                    "status-rejected": "#F53F3F",
+                    "on-secondary-fixed": "#181c23",
+                    "background-surface": "#F7F8FA",
+                    "on-primary-container": "#003434",
+                    "tertiary-fixed-dim": "#ffb692",
+                    "on-tertiary-container": "#521e00",
+                    "tertiary": "#96481c",
+                    "on-tertiary-fixed-variant": "#783204",
+                    "status-offered": "#00B42A",
+                    "surface": "#f5fafa",
+                    "border-subtle": "#E5E6EB",
+                    "surface-container-highest": "#dee4e3",
+                    "on-secondary-container": "#5f636c",
+                    "on-secondary-fixed-variant": "#434750"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-gap": "8px",
+                    "margin-mobile": "16px",
+                    "gutter-sm": "12px",
+                    "unit": "4px",
+                    "margin-desktop": "24px",
+                    "gutter-md": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter", "sans-serif"],
+                    "label-sm": ["Inter", "sans-serif"],
+                    "headline-lg": ["Inter", "sans-serif"],
+                    "body-lg": ["Inter", "sans-serif"],
+                    "body-md": ["Inter", "sans-serif"],
+                    "headline-lg-mobile": ["Inter", "sans-serif"],
+                    "label-md": ["Inter", "sans-serif"]
+            },
+            "fontSize": {
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .transition-all-custom { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background-surface font-body-md text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top AppBar -->
+<header class="flex justify-between items-center w-full px-margin-mobile h-14 bg-surface dark:bg-on-surface-variant fixed top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img alt="用户头像" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqkX1xQMUBx2vOkqWIN9InKBYsDWTODZvXy2cC-TITFJt1Q6e60k_4mgBmgd8DRhJh-fFZFg5acw_NnEjR4_HyQ7ws00zkYuC8ypKT-cuvD_ch7tNOOb2_4mIygoXzRhMukG3nEQJAM7Slv5fqcXuvxLZsVBs3MU4RlLX4_Ki2lSRG8h9Lfke2iZ80ZrbIVUUQVOou8mGHi-PGbzvpF2RlM1zPUx3fFtjVSzmFZ_FMvWtQGP1YwL-P9KfDI8XitU3cckiX2-4q0x0"/>
+</div>
+<h1 class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed">RecruitFlow</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high dark:hover:bg-inverse-surface transition-colors duration-200">
+<span class="material-symbols-outlined text-on-surface-variant dark:text-outline-variant">search</span>
+</button>
+</header>
+<main class="pt-14 pb-20 max-w-3xl mx-auto min-h-screen">
+<!-- Filter Tabs -->
+<section class="sticky top-14 bg-background-surface/80 backdrop-blur-md z-40 pt-4 pb-2 px-margin-mobile">
+<div class="flex gap-2 overflow-x-auto hide-scrollbar">
+<button class="px-5 py-2 rounded-full font-label-md text-label-md bg-primary text-on-primary shadow-sm whitespace-nowrap transition-all-custom" onclick="switchTab(this)">全部</button>
+<button class="px-5 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-high whitespace-nowrap transition-all-custom" onclick="switchTab(this)">已邀约</button>
+<button class="px-5 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-high whitespace-nowrap transition-all-custom" onclick="switchTab(this)">已查看</button>
+<button class="px-5 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-high whitespace-nowrap transition-all-custom" onclick="switchTab(this)">不合适</button>
+</div>
+</section>
+<!-- Application List -->
+<section class="px-margin-mobile flex flex-col gap-3 mt-2">
+<!-- Card 1: Interview Invite -->
+<div class="bg-surface-container-lowest border border-border-subtle p-gutter-md rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:border-primary transition-all duration-300">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">高级产品设计师</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Stellar Systems 科技有限公司</p>
+</div>
+<span class="text-primary font-bold text-body-lg">140k - 180k</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 bg-surface-container rounded-lg text-label-md font-label-md text-on-secondary-container">旧金山 (混合办公)</span>
+<span class="px-2 py-1 bg-surface-container rounded-lg text-label-md font-label-md text-on-secondary-container">5年以上</span>
+</div>
+<div class="flex justify-between items-center pt-3 border-t border-border-subtle">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg overflow-hidden bg-surface-container">
+<img alt="公司标志" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXX3BfgRW_avVdtW2Tep753-uh3bS2L3AGFATyLh0L6mk4kWCcLzUvisDwda4rBctA_3_VLVOEo2d3DuBlRLJUkLDmovOfio2CDRkut8CYCuVt5fiUvzsWMDqaL95ahLPNFVOLI1aEySI6p-BtCezbz6ApBs_22G-e4ZQFQqNCPBvJ6lwiStAOKS9r1u0m1L6MUIny3dD94mBXRluKdfpb10-kcHXcCrG0lv0tRenV1P9FYH08wNFLAsrGJc_R8iIsuJ8DUQczQTs"/>
+</div>
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-outline">2天前投递</span>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-status-offered/10 text-status-offered text-label-md font-label-md">面试邀请</span>
+</div>
+</div>
+<!-- Card 2: Viewed -->
+<div class="bg-surface-container-lowest border border-border-subtle p-gutter-md rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:border-primary transition-all duration-300">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">资深 UI/UX 架构师</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Nexus 全球金融科技</p>
+</div>
+<span class="text-primary font-bold text-body-lg">165k - 210k</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 bg-surface-container rounded-lg text-label-md font-label-md text-on-secondary-container">远程办公</span>
+<span class="px-2 py-1 bg-surface-container rounded-lg text-label-md font-label-md text-on-secondary-container">8年以上</span>
+</div>
+<div class="flex justify-between items-center pt-3 border-t border-border-subtle">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg overflow-hidden bg-surface-container">
+<img alt="公司标志" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoGCArl8BQyxDHgHHxQkZrytRfgdZeqjrwu4aHXEAsdrEI_QREYCgh9Hk_-yZAnxk863GyV7P_VpZVWnXhSmosBk3oCri-3uYwbiMldCFf8EZ5GTi7F2nkoI7I3vsDTCO3z1IOJUziKnSjYwlN1hwO8DL2sSJ70M7xTdz5TVJ5Jv0lbED6GaR8HNb3RLwIImJcpnwAwjS9ojcDvwG2WVhbP3H04baj3TX4ronK_uczS02c_ey0LsT22BOhOlHFqJECJv6tyh65Uns"/>
+</div>
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-outline">4天前投递</span>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-label-md font-label-md">已查看</span>
+</div>
+</div>
+<!-- Card 3: Rejected -->
+<div class="bg-surface-container-lowest border border-border-subtle p-gutter-md rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:border-primary transition-all duration-300">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">创意总监</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Pulse 传媒集团</p>
+</div>
+<span class="text-primary font-bold text-body-lg">130k - 155k</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 bg-surface-container rounded-lg text-label-md font-label-md text-on-secondary-container">纽约, NY</span>
+<span class="px-2 py-1 bg-surface-container rounded-lg text-label-md font-label-md text-on-secondary-container">6年以上</span>
+</div>
+<div class="flex justify-between items-center pt-3 border-t border-border-subtle">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg overflow-hidden bg-surface-container">
+<img alt="公司标志" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4PPWKkfrxZ_5OBI_Fc_i6kZgxYq7MmiODXR1nazho7LOuvl5hfI_wgl6ceRMIxd11FTtXj7ByeSJboKWXXLinYHlx0s_hRfgjsAZEUlWV2VwSW9zAjrwUqvZL6BtIcO1r7t3KTCqDDZh8fWApmuignDmPPI2vZHZU91xiNo5kRviXiR8Cfn6OyT2j8zdyxkYCJMpEvbwFiYM7ULIq2yxljojDvf3IR8WIKfPbssZMZS_l1LYp1aOOifYvwDMX8CfBx2xoTfHQPuc"/>
+</div>
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-outline">1周前投递</span>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-status-rejected/10 text-status-rejected text-label-md font-label-md">不合适</span>
+</div>
+</div>
+<!-- Card 4: Pending -->
+<div class="bg-surface-container-lowest border border-border-subtle p-gutter-md rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:border-primary transition-all duration-300">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">用户体验研究员</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Veridian 实验室</p>
+</div>
+<span class="text-primary font-bold text-body-lg">120k - 150k</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 bg-surface-container rounded-lg text-label-md font-label-md text-on-secondary-container">西雅图, WA</span>
+<span class="px-2 py-1 bg-surface-container rounded-lg text-label-md font-label-md text-on-secondary-container">3年以上</span>
+</div>
+<div class="flex justify-between items-center pt-3 border-t border-border-subtle">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg overflow-hidden bg-surface-container">
+<img alt="公司标志" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCynxoBDoIJ0vEuQaCM0sRgZ-uwJkxTSrpMa8zuAC9eB3CM4k1cI6usVU2KpNavVjcchsoGhmg6wYjjEFxEOMqTSq3mKr5iYSykGJFRVesOVonM8PZaQO5xUYjoCRDc44it3lcpKp5Qv72Xs6eqAkwzcP6cslIweltlbVe2He8PiwHHN_RNZ19n3moNg3JWv4UqH-b1faPH8huAgNkF62tuC0s3RwkyEMAXtvbreel6PXwepoLcgDmnBdU-SXRfbmGgdxZIk1q1UCY"/>
+</div>
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-outline">10天前投递</span>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-status-pending/10 text-status-pending text-label-md font-label-md">已投递</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-16 px-margin-mobile pb-safe bg-surface-container-lowest dark:bg-inverse-surface z-50 rounded-t-xl shadow-md border-t border-border-subtle dark:border-outline-variant">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary-container transition-transform active:scale-95">
+<span class="material-symbols-outlined">work</span>
+<span class="font-label-md text-label-md">职位</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary-container transition-transform active:scale-95">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-md text-label-md">消息</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed hover:text-primary-container transition-transform active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">description</span>
+<span class="font-label-md text-label-md">简历</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary-container transition-transform active:scale-95">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">我的</span>
+</button>
+</nav>
+<script>
+        function switchTab(el) {
+            const container = el.parentElement;
+            const buttons = container.querySelectorAll('button');
+            
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+                btn.classList.add('bg-surface-container-lowest', 'text-on-surface-variant', 'hover:bg-surface-container-high');
+            });
+
+            el.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+            el.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant', 'hover:bg-surface-container-high');
+            
+            // Interaction feedback
+            el.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                el.style.transform = 'scale(1)';
+            }, 100);
+        }
+
+        // Simple scroll reveal for cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(card => {
+            card.classList.add('opacity-0', 'translate-y-4', 'transition-all', 'duration-500');
+            observer.observe(card);
+        });
+    </script>
+</body></html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>编辑个人信息</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config injected from Style Guidance -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed": "#dfe2ed",
+                        "surface": "#f5fafa",
+                        "surface-variant": "#dee4e3",
+                        "border-subtle": "#E5E6EB",
+                        "secondary-fixed-dim": "#c3c6d1",
+                        "on-primary-fixed-variant": "#004f50",
+                        "primary-fixed": "#7af5f6",
+                        "on-secondary-fixed-variant": "#434750",
+                        "surface-container-low": "#eff5f4",
+                        "surface-container": "#e9efee",
+                        "surface-dim": "#d5dbda",
+                        "tertiary-container": "#da7d4c",
+                        "surface-container-high": "#e4e9e9",
+                        "primary-fixed-dim": "#5bd9d9",
+                        "on-secondary-fixed": "#181c23",
+                        "primary": "#006a6a",
+                        "outline-variant": "#bcc9c9",
+                        "on-secondary-container": "#5f636c",
+                        "surface-bright": "#f5fafa",
+                        "status-pending": "#FF7D00",
+                        "on-secondary": "#ffffff",
+                        "background-surface": "#F7F8FA",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#003434",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#96481c",
+                        "outline": "#6c7a79",
+                        "inverse-on-surface": "#ecf2f1",
+                        "surface-container-lowest": "#ffffff",
+                        "status-offered": "#00B42A",
+                        "success-mint": "#00A6A7",
+                        "status-rejected": "#F53F3F",
+                        "tertiary-fixed": "#ffdbcb",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#006a6a",
+                        "inverse-surface": "#2c3231",
+                        "on-tertiary-fixed-variant": "#783204",
+                        "on-surface": "#171d1d",
+                        "on-primary-fixed": "#002020",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#521e00",
+                        "primary-container": "#00a6a7",
+                        "on-tertiary-fixed": "#341100",
+                        "inverse-primary": "#5bd9d9",
+                        "surface-container-highest": "#dee4e3",
+                        "on-surface-variant": "#3d4949",
+                        "background": "#f5fafa",
+                        "tertiary-fixed-dim": "#ffb692",
+                        "secondary": "#5b5e68",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "on-background": "#171d1d",
+                        "secondary-container": "#dcdfea"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-desktop": "24px",
+                        "gutter-md": "16px",
+                        "stack-gap": "8px",
+                        "margin-mobile": "16px",
+                        "gutter-sm": "12px",
+                        "unit": "4px"
+                    },
+                    fontFamily: {
+                        "label-md": ["Inter", "sans-serif"],
+                        "headline-lg": ["Inter", "sans-serif"],
+                        "label-sm": ["Inter", "sans-serif"],
+                        "headline-lg-mobile": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "headline-md": ["Inter", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"]
+                    },
+                    fontSize: {
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Base styles */
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Custom scrollbar for better look on desktop if previewed there */
+        ::-webkit-scrollbar { width: 4px; height: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #dee4e3; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #bcc9c9; }
+        
+        /* Safe area utilities */
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom, 24px); }
+        .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+        
+        /* Input overrides for dates */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            background: transparent;
+            bottom: 0;
+            color: transparent;
+            cursor: pointer;
+            height: auto;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: auto;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col">
+<!-- Task-focused Header (Replaces generic TopAppBar) -->
+<header class="flex justify-between items-center w-full px-margin-mobile h-14 bg-surface-container-lowest sticky top-0 z-50 pt-safe shadow-[0_1px_3px_rgba(0,0,0,0.02)]">
+<button aria-label="Go back" class="w-10 h-10 flex items-center justify-start text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back_ios</span>
+</button>
+<h1 class="font-headline-md text-[18px] font-semibold text-on-surface">编辑个人信息</h1>
+<div class="w-10"></div> <!-- Balancer -->
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 w-full max-w-[600px] mx-auto overflow-y-auto px-margin-mobile pb-32">
+<!-- 1. Avatar Upload Section -->
+<section class="flex flex-col items-center justify-center py-8">
+<div class="relative group cursor-pointer">
+<div class="w-24 h-24 rounded-full overflow-hidden border-2 border-surface-container-lowest shadow-md bg-surface-container flex items-center justify-center">
+<!-- Avatar Image -->
+<img alt="Current user avatar" class="w-full h-full object-cover" data-alt="A close-up, professional headshot of a confident young professional in a brightly lit modern office setting. The lighting is soft and even, highlighting a clean, energetic aesthetic suitable for a high-efficiency recruitment platform. The background is a slightly blurred, light-colored modern workspace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKjhCgWO_-Cer57uvaAWDZWBBf_TCgaUSMPgBCQZ6IUevSXIkXXNm81qXDCmWfzklHuTr78I6epk9AzPZCYt596Atf82IRSOwsp7nn-d6_yxiWm2sabYTx6nH-ofDIrKStbAIyFQNUiZz8UfnRHPtnhocXL7o0DFYhyVtRY-XuEr4FMoCWK8AKuaAmYB1PyMx83ChyYcxydxG_nnQ64AXK33v51gPuqZrE9phX2_ZJGRazr8PuD-8ZqHRW5O7n_kBJbfvt2-S_qv0"/>
+</div>
+<!-- Edit Badge -->
+<div class="absolute bottom-0 right-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center border-2 border-surface-container-lowest shadow-sm transform transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-on-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">photo_camera</span>
+</div>
+</div>
+<p class="mt-3 font-label-md text-label-md text-on-surface-variant">点击更换头像</p>
+</section>
+<!-- 2. Form Fields Section -->
+<section class="bg-surface-container-lowest rounded-xl p-gutter-md shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-border-subtle flex flex-col gap-6">
+<!-- Field: Name -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface" for="userName">姓名 <span class="text-error">*</span></label>
+<div class="relative">
+<input class="w-full h-12 px-4 rounded-xl border border-border-subtle bg-surface-bright font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200" id="userName" placeholder="请输入真实姓名" type="text" value="张伟"/>
+</div>
+</div>
+<!-- Field: Gender (Segmented Control) -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface">性别</label>
+<div class="flex p-1 bg-surface-container rounded-xl w-full" id="genderToggle">
+<button class="flex-1 h-10 flex items-center justify-center rounded-lg bg-surface-container-lowest shadow-sm text-primary font-label-md text-label-md transition-all duration-200" data-value="male" type="button">男</button>
+<button class="flex-1 h-10 flex items-center justify-center rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-all duration-200" data-value="female" type="button">女</button>
+</div>
+</div>
+<!-- Field: Birthday -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface" for="birthday">出生年月</label>
+<div class="relative">
+<input class="w-full h-12 px-4 rounded-xl border border-border-subtle bg-surface-bright font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 appearance-none" id="birthday" type="date" value="1995-06-15"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">calendar_month</span>
+</div>
+</div>
+<!-- Field: Starting Work Date -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface" for="workDate">参加工作时间</label>
+<div class="relative">
+<input class="w-full h-12 px-4 rounded-xl border border-border-subtle bg-surface-bright font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 appearance-none" id="workDate" type="date" value="2018-07-01"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">work_history</span>
+</div>
+</div>
+<!-- Field: Current City -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface" for="city">所在城市</label>
+<div class="relative">
+<input class="w-full h-12 px-4 pr-10 rounded-xl border border-border-subtle bg-surface-bright font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200" id="city" placeholder="请选择或输入城市" type="text" value="上海市"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">location_on</span>
+</div>
+</div>
+</section>
+</main>
+<!-- 3. Save Button (Fixed Footer) -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-container-lowest border-t border-border-subtle px-margin-mobile py-3 pb-safe z-50 shadow-[0_-4px_16px_rgba(0,0,0,0.02)]">
+<div class="max-w-[600px] mx-auto w-full">
+<button class="w-full h-12 bg-primary text-on-primary font-headline-md text-[16px] rounded-xl flex items-center justify-center hover:bg-primary-container hover:text-on-primary-container active:scale-[0.98] transition-all duration-200 shadow-sm">
+                保存
+            </button>
+</div>
+</div>
+<!-- Minimal Interaction Script -->
+<script>
+        // Gender segmented control logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const genderContainer = document.getElementById('genderToggle');
+            const buttons = genderContainer.querySelectorAll('button');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Reset all
+                    buttons.forEach(btn => {
+                        btn.className = 'flex-1 h-10 flex items-center justify-center rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-all duration-200';
+                    });
+                    
+                    // Set active
+                    this.className = 'flex-1 h-10 flex items-center justify-center rounded-lg bg-surface-container-lowest shadow-sm text-primary font-label-md text-label-md transition-all duration-200';
+                });
+            });
+        });
+    </script>
+</body></html>

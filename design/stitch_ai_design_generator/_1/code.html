@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RecruitFlow - 现代招聘生态系统</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#da7d4c",
+                        "on-primary-fixed": "#002020",
+                        "status-pending": "#FF7D00",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#ecf2f1",
+                        "on-surface": "#171d1d",
+                        "background": "#f5fafa",
+                        "surface-container-low": "#eff5f4",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f5fafa",
+                        "on-background": "#171d1d",
+                        "tertiary-fixed": "#ffdbcb",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#006a6a",
+                        "on-tertiary-fixed": "#341100",
+                        "secondary": "#5b5e68",
+                        "surface-container-high": "#e4e9e9",
+                        "inverse-surface": "#2c3231",
+                        "outline-variant": "#bcc9c9",
+                        "primary": "#006a6a",
+                        "success-mint": "#00A6A7",
+                        "primary-container": "#00a6a7",
+                        "surface-container": "#e9efee",
+                        "primary-fixed": "#7af5f6",
+                        "on-error": "#ffffff",
+                        "outline": "#6c7a79",
+                        "secondary-container": "#dcdfea",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#c3c6d1",
+                        "on-surface-variant": "#3d4949",
+                        "on-primary-fixed-variant": "#004f50",
+                        "surface-dim": "#d5dbda",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#5bd9d9",
+                        "primary-fixed-dim": "#5bd9d9",
+                        "secondary-fixed": "#dfe2ed",
+                        "surface-variant": "#dee4e3",
+                        "status-rejected": "#F53F3F",
+                        "on-secondary-fixed": "#181c23",
+                        "background-surface": "#F7F8FA",
+                        "on-primary-container": "#003434",
+                        "tertiary-fixed-dim": "#ffb692",
+                        "on-tertiary-container": "#521e00",
+                        "tertiary": "#96481c",
+                        "on-tertiary-fixed-variant": "#783204",
+                        "status-offered": "#00B42A",
+                        "surface": "#f5fafa",
+                        "border-subtle": "#E5E6EB",
+                        "surface-container-highest": "#dee4e3",
+                        "on-secondary-container": "#5f636c",
+                        "on-secondary-fixed-variant": "#434750"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-gap": "8px",
+                        "margin-mobile": "16px",
+                        "gutter-sm": "12px",
+                        "unit": "4px",
+                        "margin-desktop": "24px",
+                        "gutter-md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-tab::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #006a6a;
+            border-radius: 99px;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background-surface font-body-md text-on-surface">
+<!-- Top Navigation Anchor -->
+<header class="docked full-width top-0 z-50 bg-surface dark:bg-on-surface-variant flex justify-between items-center w-full px-margin-mobile h-14">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="用户头像" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a young product designer with a friendly expression. The background is a clean, minimalist studio setting with soft, high-key lighting that emphasizes a bright and modern corporate aesthetic. The image uses a crisp, high-resolution style with a focus on natural skin tones and a sophisticated, professional atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4AdxchZlctb5szSlD2cvkrKDYTETFsImTcJ3PegR9-XxWdpQpH_fYBN77xAHnHTRjZ63tUOMVHl4xE4MPM0Iwn1hjZdY4hHYFzU291nrix3XaPfnhk7PihPZACo69qmHT8n751N3mxa6xhY-0gcig5_sOOiEFn1EXbV0aWyZhSb-k4qF_3IQ55D7MIGgGfCIJwOo93v0lUQFBFNh5DlPSNe1fWPePbEjN7gH0_CgRIJUxzysIA5BQVMCm7yufMhaxXmZJly6sPOI"/>
+</div>
+<h1 class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed">RecruitFlow</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high dark:hover:bg-inverse-surface transition-colors duration-200">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">search</span>
+</button>
+</header>
+<main class="pb-24 pt-4">
+<!-- Search & Filters Section -->
+<section class="px-margin-mobile mb-6">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full h-12 pl-12 pr-4 bg-surface-container-lowest border border-border-subtle rounded-xl font-body-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" placeholder="职位名称、公司名称" type="text"/>
+</div>
+<!-- Category Tabs -->
+<nav class="flex gap-6 mt-6 border-b border-border-subtle relative">
+<button class="font-label-md text-label-md pb-3 text-primary relative active-tab">推荐</button>
+<button class="font-label-md text-label-md pb-3 text-on-surface-variant hover:text-primary transition-colors">附近</button>
+<button class="font-label-md text-label-md pb-3 text-on-surface-variant hover:text-primary transition-colors">最新</button>
+</nav>
+</section>
+<!-- Bento Style Featured (Subtle) -->
+<section class="px-margin-mobile mb-8">
+<div class="grid grid-cols-2 gap-3">
+<div class="col-span-2 bg-primary-container p-4 rounded-xl flex justify-between items-center overflow-hidden relative">
+<div class="z-10">
+<h3 class="font-headline-md text-white mb-1">职业洞察</h3>
+<p class="text-white/80 text-sm">更新你的简历，可提高 20% 的匹配度。</p>
+</div>
+<span class="material-symbols-outlined text-white/20 text-6xl absolute -right-4 -bottom-4">auto_awesome</span>
+</div>
+</div>
+</section>
+<!-- Job Listings -->
+<section class="px-margin-mobile flex flex-col gap-3">
+<h2 class="font-label-md text-label-md uppercase tracking-wider text-outline mb-1">为你推荐</h2>
+<!-- Job Card 1 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-border-subtle shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:border-primary transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-on-surface group-hover:text-primary transition-colors">资深产品设计师</h3>
+<span class="font-headline-md text-primary">$120k - $160k</span>
+</div>
+<div class="flex gap-2 mb-4">
+<span class="px-2 py-1 bg-surface-container-high rounded-md text-[10px] font-bold text-on-surface-variant">远程</span>
+<span class="px-2 py-1 bg-surface-container-high rounded-md text-[10px] font-bold text-on-surface-variant">全职</span>
+<span class="px-2 py-1 bg-surface-container-high rounded-md text-[10px] font-bold text-on-surface-variant">5年+ 经验</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container border border-border-subtle flex items-center justify-center overflow-hidden">
+<img alt="Stripe 图标" class="w-8 h-8 object-contain" data-alt="A sleek and modern corporate logo for a leading fintech company, displayed against a clean white background. The logo features minimalist typography and a vibrant purple accent color. The style is professional and high-end, representing a global technology leader in a bright, modern light-mode interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYl2zSB91pR5ANGMHyVPGPOzNeSdYSJVerPxRB0xkf4C3zVbLvJ_WLMmQ-6Dy1Mdi5ew3fxa3sgkzMdUBTaRLwSRmUnEBK0WO_tQ8INmGteBQ9wVWW4A0Qi4XwJHAGFzL89LDVH7mrwcWcqErMTB0FsR3ngNW1Oism0362G2tTzLm5JGcTe7V3uNYHxXuv3URqICCQIxzawA-Gy-qUh9vIJXk8smcB7YZ5JhGx1e3qEw0dSw5wqxndhAezhJIioXDKiE2gp6lL0Ls"/>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-on-surface">Stripe</p>
+<p class="text-xs text-outline">加利福尼亚州 旧金山</p>
+</div>
+<div class="px-2 py-1 bg-[#00B42A]/10 text-[#00B42A] rounded-full text-[10px] font-bold">新发布</div>
+</div>
+</div>
+<!-- Job Card 2 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-border-subtle shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:border-primary transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-on-surface group-hover:text-primary transition-colors">前端架构师</h3>
+<span class="font-headline-md text-primary">$140k - $190k</span>
+</div>
+<div class="flex gap-2 mb-4">
+<span class="px-2 py-1 bg-surface-container-high rounded-md text-[10px] font-bold text-on-surface-variant">混合办公</span>
+<span class="px-2 py-1 bg-surface-container-high rounded-md text-[10px] font-bold text-on-surface-variant">合同制</span>
+<span class="px-2 py-1 bg-surface-container-high rounded-md text-[10px] font-bold text-on-surface-variant">资深</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container border border-border-subtle flex items-center justify-center overflow-hidden">
+<img alt="Airbnb 图标" class="w-8 h-8 object-contain" data-alt="A contemporary and recognizable brand logo for a global travel platform, centered on a pristine white canvas. The logo uses a signature coral-pink color with soft, organic shapes. The visual style is friendly yet professional, captured with clean studio lighting to maintain a bright, high-quality aesthetic consistent with modern design systems." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf7xSHz6NEMK-DkQxMbr04ZjXEyaL2UGoHbtuJz0xlS2FzHD_a-drdlgaxZ72isbYzrxDTXOaTgExN02BIrErsonzRClQ9eH-889jz7OjwKC2uIEG_x16FhX2VIMYGcyz7rJven8Gg8iYEjOJ54DLfdC4vSZm-NxAiwezydi4hGjdcbK0MwnkmrJoUOE49nmSOQvs6mNOdrjxaM1daz8pAuVYCosXGF5m_JsU1U2MIARXlPdEfe5SdKfc9CZxLMAAkLFDdXaPd_iY"/>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-on-surface">Airbnb</p>
+<p class="text-xs text-outline">纽约州 纽约</p>
+</div>
+<div class="px-2 py-1 bg-status-pending/10 text-status-pending rounded-full text-[10px] font-bold">热门职位</div>
+</div>
+</div>
+<!-- Job Card 3 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-border-subtle shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:border-primary transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-on-surface group-hover:text-primary transition-colors">用户体验研究员</h3>
+<span class="font-headline-md text-primary">$90k - $130k</span>
+</div>
+<div class="flex gap-2 mb-4">
+<span class="px-2 py-1 bg-surface-container-high rounded-md text-[10px] font-bold text-on-surface-variant">实地办公</span>
+<span class="px-2 py-1 bg-surface-container-high rounded-md text-[10px] font-bold text-on-surface-variant">全职</span>
+<span class="px-2 py-1 bg-surface-container-high rounded-md text-[10px] font-bold text-on-surface-variant">2年+ 经验</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container border border-border-subtle flex items-center justify-center overflow-hidden">
+<img alt="Framer 图标" class="w-8 h-8 object-contain" data-alt="A minimalist and geometric corporate logo for a design software company, presented on a bright white background. The logo features sharp angles and a deep black color, symbolizing precision and creativity. The lighting is uniform and bright, evoking a professional tech-focused environment with a modern, high-contrast aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8j8qUsrM-6hVKFmcT-y-QNhmFB1psn0lz5uFu4AjlwTPhLt90_3oAIsdVG_qsIrTwfneuL7mpdn6Rd2xBjcl5UaUNxSGy7-wrSV3gfrXXcPySvVp8U19qwF_9eVX_T-19Ti57iMxJa2OvV_EgNEe18G4mxuPxM39WtdU2tasr3KMa7CEyt0LSUnp98jky6OxRrcMLHTdvT20syWdRVGJmsBwuGmGKNVf1X9RbVlbDS5ZGrQeQC_Y4jH1ji2CK64yIslTJpT6wTms"/>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-on-surface">Framer</p>
+<p class="text-xs text-outline">荷兰 阿姆斯特丹</p>
+</div>
+<div class="px-2 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-bold">高匹配度</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-16 px-margin-mobile pb-safe bg-surface-container-lowest dark:bg-inverse-surface border-t border-border-subtle dark:border-outline-variant shadow-md z-50 rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">work</span>
+<span class="font-label-md text-label-md">职位</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary-container active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-md text-label-md">消息</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary-container active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-label-md text-label-md">简历</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary-container active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">我的</span>
+</a>
+</nav>
+<!-- Micro-interactions Script -->
+<script>
+    // Simple tab switching visual effect
+    const tabs = document.querySelectorAll('nav button');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => {
+                t.classList.remove('text-primary', 'active-tab');
+                t.classList.add('text-on-surface-variant');
+            });
+            tab.classList.remove('text-on-surface-variant');
+            tab.classList.add('text-primary', 'active-tab');
+        });
+    });
+
+    // Search focus interaction
+    const searchInput = document.querySelector('input[type="text"]');
+    searchInput.addEventListener('focus', () => {
+        searchInput.parentElement.classList.add('scale-[1.02]');
+        searchInput.parentElement.classList.add('transition-transform');
+    });
+    searchInput.addEventListener('blur', () => {
+        searchInput.parentElement.classList.remove('scale-[1.02]');
+    });
+</script>
+</body></html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>筛选职位 - RecruitFlow</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#dfe2ed",
+                        "surface": "#f5fafa",
+                        "surface-variant": "#dee4e3",
+                        "border-subtle": "#E5E6EB",
+                        "secondary-fixed-dim": "#c3c6d1",
+                        "on-primary-fixed-variant": "#004f50",
+                        "primary-fixed": "#7af5f6",
+                        "on-secondary-fixed-variant": "#434750",
+                        "surface-container-low": "#eff5f4",
+                        "surface-container": "#e9efee",
+                        "surface-dim": "#d5dbda",
+                        "tertiary-container": "#da7d4c",
+                        "surface-container-high": "#e4e9e9",
+                        "primary-fixed-dim": "#5bd9d9",
+                        "on-secondary-fixed": "#181c23",
+                        "primary": "#006a6a",
+                        "outline-variant": "#bcc9c9",
+                        "on-secondary-container": "#5f636c",
+                        "surface-bright": "#f5fafa",
+                        "status-pending": "#FF7D00",
+                        "on-secondary": "#ffffff",
+                        "background-surface": "#F7F8FA",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#003434",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#96481c",
+                        "outline": "#6c7a79",
+                        "inverse-on-surface": "#ecf2f1",
+                        "surface-container-lowest": "#ffffff",
+                        "status-offered": "#00B42A",
+                        "success-mint": "#00A6A7",
+                        "status-rejected": "#F53F3F",
+                        "tertiary-fixed": "#ffdbcb",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#006a6a",
+                        "inverse-surface": "#2c3231",
+                        "on-tertiary-fixed-variant": "#783204",
+                        "on-surface": "#171d1d",
+                        "on-primary-fixed": "#002020",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#521e00",
+                        "primary-container": "#00a6a7",
+                        "on-tertiary-fixed": "#341100",
+                        "inverse-primary": "#5bd9d9",
+                        "surface-container-highest": "#dee4e3",
+                        "on-surface-variant": "#3d4949",
+                        "background": "#f5fafa",
+                        "tertiary-fixed-dim": "#ffb692",
+                        "secondary": "#5b5e68",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "on-background": "#171d1d",
+                        "secondary-container": "#dcdfea"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "24px",
+                        "gutter-md": "16px",
+                        "stack-gap": "8px",
+                        "margin-mobile": "16px",
+                        "gutter-sm": "12px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .filter-chip {
+            transition: all 0.2s ease-in-out;
+        }
+        .filter-chip.active {
+            background-color: theme('colors.primary-container');
+            color: theme('colors.on-primary-container');
+            border-color: theme('colors.primary-container');
+            font-weight: 600;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-surface min-h-screen font-body-md text-on-surface antialiased flex flex-col md:hidden">
+<!-- TopAppBar (Transactional - Hidden Navigation Shell intent, but we need a header for the filter screen itself. Keeping it simple and focused) -->
+<header class="bg-surface docked full-width top-0 z-50 flex justify-between items-center w-full px-margin-mobile h-14 border-b border-border-subtle">
+<button class="text-on-surface-variant p-2 -ml-2 rounded-full hover:bg-surface-container-high transition-colors duration-200" onclick="history.back()">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">close</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface">筛选职位</h1>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto pb-24">
+<div class="px-margin-mobile py-4 space-y-8">
+<!-- City Section -->
+<section>
+<h2 class="font-label-md text-label-md text-on-surface-variant mb-3 uppercase tracking-wide">城市</h2>
+<div class="flex flex-wrap gap-2">
+<button class="filter-chip active border border-border-subtle bg-surface px-4 py-2 rounded-full font-body-md text-body-md text-on-surface">不限</button>
+<button class="filter-chip border border-border-subtle bg-surface px-4 py-2 rounded-full font-body-md text-body-md text-on-surface">北京</button>
+<button class="filter-chip border border-border-subtle bg-surface px-4 py-2 rounded-full font-body-md text-body-md text-on-surface">上海</button>
+<button class="filter-chip border border-border-subtle bg-surface px-4 py-2 rounded-full font-body-md text-body-md text-on-surface">广州</button>
+<button class="filter-chip border border-border-subtle bg-surface px-4 py-2 rounded-full font-body-md text-body-md text-on-surface">深圳</button>
+<button class="filter-chip border border-border-subtle bg-surface px-4 py-2 rounded-full font-body-md text-body-md text-on-surface">杭州</button>
+</div>
+</section>
+<!-- Salary Range Section -->
+<section>
+<h2 class="font-label-md text-label-md text-on-surface-variant mb-3 uppercase tracking-wide">薪资范围</h2>
+<div class="grid grid-cols-3 gap-2">
+<button class="filter-chip active border border-border-subtle bg-surface px-2 py-3 rounded-lg font-body-md text-body-md text-center text-on-surface">不限</button>
+<button class="filter-chip border border-border-subtle bg-surface px-2 py-3 rounded-lg font-body-md text-body-md text-center text-on-surface">3K以下</button>
+<button class="filter-chip border border-border-subtle bg-surface px-2 py-3 rounded-lg font-body-md text-body-md text-center text-on-surface">3-5K</button>
+<button class="filter-chip border border-border-subtle bg-surface px-2 py-3 rounded-lg font-body-md text-body-md text-center text-on-surface">5-10K</button>
+<button class="filter-chip border border-border-subtle bg-surface px-2 py-3 rounded-lg font-body-md text-body-md text-center text-on-surface">10-20K</button>
+<button class="filter-chip border border-border-subtle bg-surface px-2 py-3 rounded-lg font-body-md text-body-md text-center text-on-surface">20K以上</button>
+</div>
+</section>
+<!-- Degree Requirement Section -->
+<section>
+<h2 class="font-label-md text-label-md text-on-surface-variant mb-3 uppercase tracking-wide">学历要求</h2>
+<div class="grid grid-cols-3 gap-2">
+<button class="filter-chip active border border-border-subtle bg-surface px-2 py-3 rounded-lg font-body-md text-body-md text-center text-on-surface">不限</button>
+<button class="filter-chip border border-border-subtle bg-surface px-2 py-3 rounded-lg font-body-md text-body-md text-center text-on-surface">大专</button>
+<button class="filter-chip border border-border-subtle bg-surface px-2 py-3 rounded-lg font-body-md text-body-md text-center text-on-surface">本科</button>
+<button class="filter-chip border border-border-subtle bg-surface px-2 py-3 rounded-lg font-body-md text-body-md text-center text-on-surface">硕士</button>
+<button class="filter-chip border border-border-subtle bg-surface px-2 py-3 rounded-lg font-body-md text-body-md text-center text-on-surface">博士</button>
+</div>
+</section>
+<!-- Job Type Section -->
+<section>
+<h2 class="font-label-md text-label-md text-on-surface-variant mb-3 uppercase tracking-wide">工作形式</h2>
+<div class="flex flex-wrap gap-2">
+<button class="filter-chip active border border-border-subtle bg-surface px-4 py-2 rounded-full font-body-md text-body-md text-on-surface">不限</button>
+<button class="filter-chip border border-border-subtle bg-surface px-4 py-2 rounded-full font-body-md text-body-md text-on-surface">全职</button>
+<button class="filter-chip border border-border-subtle bg-surface px-4 py-2 rounded-full font-body-md text-body-md text-on-surface">兼职</button>
+<button class="filter-chip border border-border-subtle bg-surface px-4 py-2 rounded-full font-body-md text-body-md text-on-surface">实习</button>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-container-lowest border-t border-border-subtle px-margin-mobile py-4 pb-safe flex gap-4 z-50">
+<button class="flex-1 bg-surface-container-low text-on-surface border border-border-subtle py-3 rounded-xl font-headline-md text-body-lg text-center hover:bg-surface-container-high transition-colors">
+            重置
+        </button>
+<button class="flex-[2] bg-primary text-on-primary py-3 rounded-xl font-headline-md text-body-lg text-center shadow-md hover:bg-primary-fixed-dim transition-colors">
+            确定 (124)
+        </button>
+</div>
+<script>
+        // Simple script to toggle active state on chips within sections
+        document.querySelectorAll('section').forEach(section => {
+            const chips = section.querySelectorAll('.filter-chip');
+            chips.forEach(chip => {
+                chip.addEventListener('click', () => {
+                    chips.forEach(c => c.classList.remove('active', 'bg-primary-container', 'text-on-primary-container', 'border-primary-container'));
+                    chip.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body></html>
