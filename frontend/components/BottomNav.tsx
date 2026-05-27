@@ -6,8 +6,8 @@ import { Icon } from "@/components/Icon";
 
 const tabs = [
   { href: "/", icon: "work", label: "职位" },
-  { href: "#", icon: "chat_bubble", label: "消息" },
-  { href: "#", icon: "description", label: "简历" },
+  { href: "/messages", icon: "chat_bubble", label: "消息" },
+  { href: "/resume", icon: "description", label: "简历" },
   { href: "/profile", icon: "person", label: "我的" },
 ];
 

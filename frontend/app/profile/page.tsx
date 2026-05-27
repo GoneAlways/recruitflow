@@ -143,7 +143,7 @@ export default function ProfilePage() {
               >
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:text-primary transition-colors">
-                    <span className="material-symbols-outlined text-[20px]">{item.icon}</span>
+                    <Icon name={item.icon} size={20} />
                   </div>
                   <span className="font-body-md text-body-md text-on-surface">{item.label}</span>
                 </div>

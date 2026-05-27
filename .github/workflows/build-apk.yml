@@ -55,6 +55,16 @@ jobs:
         working-directory: frontend
         run: npx cap sync android
 
+      - name: Allow HTTP cleartext
+        run: |
+          MANIFEST="frontend/android/app/src/main/AndroidManifest.xml"
+          if grep -q 'usesCleartextTraffic' "$MANIFEST"; then
+            echo "cleartext already set"
+          else
+            sed -i 's|<application|<application android:usesCleartextTraffic="true"|' "$MANIFEST"
+            echo "added cleartext traffic permission"
+          fi
+
       - name: Build APK (debug)
         id: build
         working-directory: frontend/android
