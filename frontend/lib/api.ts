@@ -61,15 +61,23 @@ export const api = {
       password: string;
       email?: string;
     }) =>
-      request<{ token: string; user: any }>("/auth/register", {
-        method: "POST",
-        body: JSON.stringify(data),
-      }),
+      request<{ token: string; user: any }>(
+        "/auth/register",
+        {
+          method: "POST",
+          body: JSON.stringify(data),
+        },
+        { token: "mock-token-2024", user: mockUser.data }
+      ),
     login: (data: { phone: string; password: string }) =>
-      request<{ token: string; user: any }>("/auth/login", {
-        method: "POST",
-        body: JSON.stringify(data),
-      }),
+      request<{ token: string; user: any }>(
+        "/auth/login",
+        {
+          method: "POST",
+          body: JSON.stringify(data),
+        },
+        { token: "mock-token-2024", user: mockUser.data }
+      ),
   },
 
   jobs: {
