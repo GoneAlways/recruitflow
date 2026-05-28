@@ -31,6 +31,11 @@ async function request<T>(
   options: RequestInit = {},
   fallback?: T
 ): Promise<{ code: number; message: string; data: T }> {
+  // If fallback provided, skip network — backend is dead, don't wait for timeout
+  if (fallback !== undefined) {
+    return { code: 200, message: "离线模式", data: fallback };
+  }
+
   const token = getToken();
   const headers: Record<string, string> = {
     "Content-Type": "application/json",
@@ -45,10 +50,6 @@ async function request<T>(
     });
     return res.json();
   } catch {
-    // Network error or timeout — return fallback if provided
-    if (fallback !== undefined) {
-      return { code: 200, message: "离线模式", data: fallback };
-    }
     return { code: 0, message: "网络不可用，请稍后重试", data: [] as any };
   }
 }
