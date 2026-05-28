@@ -37,35 +37,54 @@
     "BUILD_ANALYSIS_MODE": "normal",
     "TASK_TIME": {
       "923fe53966c6cd9343e11af776cd4b05be315ea4b200b02e4d5dfb0f929b73bf": {
-        "init": 1539700
+        "init": 543800,
+        "PreBuild": 128650700,
+        "CreateModuleInfo": 1122700,
+        "GenerateMetadata": 3452400,
+        "ConfigureCmake": 288400,
+        "MergeProfile": 3680800,
+        "CreateBuildProfile": 3015400,
+        "PreCheckSyscap": 572600,
+        "GeneratePkgContextInfo": 9668000,
+        "GeneratePkgSdkInfo": 4536000,
+        "ProcessIntegratedHsp": 1254900,
+        "BuildNativeWithCmake": 345700,
+        "MakePackInfo": 3786500,
+        "SyscapTransform": 2231100,
+        "ProcessProfile": 1456347700,
+        "ProcessRouterMap": 4535800,
+        "ProcessShareConfig": 3421700,
+        "ProcessStartupConfig": 1360300,
+        "BuildNativeWithNinja": 1830500,
+        "ProcessResource": 5657400,
+        "GenerateLoaderJson": 15310600,
+        "ProcessLibs": 7862400
       },
       "APP": {
-        "init": 1021200
+        "init": 264900
       }
     },
     "CUSTOM_TASK_TIME": {},
     "CUSTOM_PLUGIN_TIME": {},
-    "APIS": [],
+    "APIS": [
+      "getProperty"
+    ],
     "CONFIG_EXPERIMENT": {
       "ENABLE_MODULE_SKIP": false,
       "ENABLE_CPP_FUNCTION_LEVEL_INCREMENTAL": false
     },
     "CONFIG_PROPERTIES": {},
-    "TOTAL_TIME": 163276700,
-    "BUILD_ID": "202605281202001000",
+    "TOTAL_TIME": 3274045100,
+    "BUILD_ID": "202605281205131870",
     "ERROR_MESSAGE": [
       {
-        "CODE": "00303076",
-        "MESSAGE": "Error in %s. The name of the module must be a string, but received a %s.",
-        "SOLUTIONS": [
-          "Verify the 'name' in oh-package.json5 files."
-        ],
-        "TIMESTAMP": "1779940920246"
+        "CODE": "11211120",
+        "STACK": "...\n    at OhosLogger.errorMessageExit (***\\tools\\hvigor\\hvigor\\src\\base\\log\\hv***g.js:1:3497)\n90893365bbd5a58338e\n90893365bbd5a58338e\n90893365bbd5a58338e\n...\n90893365bbd5a58338e\n90893365bbd5a58338e\n90893365bbd5a58338e\n...\n90893365bbd5a58338e",
+        "PROJECT_CONFIG": {}
       },
       {
-        "CODE": "00303076",
-        "STACK": "00303076 Configuration Error\n...\n    at OhosLogger.printErrorExit (***\\tools\\hvigor\\hvigor\\src\\base\\log\\hv***g.js:1:5087)\n90893365bbd5a58338e\n90893365bbd5a58338e\n90893365bbd5a58338e\n...\n    at async PreBuild.execute (***\\tools\\hvigor\\hvigor\\src\\base\\external\\task\\co***l.js:1:2258)\n    at async TaskProxy.execute (***\\tools\\hvigor\\hvigor\\src\\base\\internal\\task\\proxy\\ta***y.js:1:6613)\n    at async doIncrementalTask (***\\tools\\hvigor\\hvigor\\src\\base\\internal\\core\\in***r.js:1:941)\n    at async executeOneTask (***\\tools\\hvigor\\hvigor\\src\\base\\internal\\task\\core\\ta***r.js:1:4373)\n    at async runTaskFromQueue (***\\tools\\hvigor\\hvigor\\src\\base\\internal\\task\\core\\ta***r.js:1:2473)",
-        "PROJECT_CONFIG": {}
+        "CODE": "11211120",
+        "TIMESTAMP": "1779941116446"
       }
     ]
   }
