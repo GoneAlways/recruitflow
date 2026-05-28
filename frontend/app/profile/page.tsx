@@ -1,7 +1,6 @@
 "use client";
 
 import BottomNav from "@/components/BottomNav";
-import Link from "next/link";
 import { Icon } from "@/components/Icon";
 
 const MOCK_USER = {
@@ -43,10 +42,10 @@ export default function ProfilePage() {
               </div>
             </div>
 
-            <Link href="/profile/edit" className="w-full py-2 bg-primary-container text-on-primary-container rounded-lg text-label-md hover:opacity-90 transition-opacity flex items-center justify-center gap-2 relative z-10">
+            <a href="profile/edit.html" className="w-full py-2 bg-primary-container text-on-primary-container rounded-lg text-label-md hover:opacity-90 transition-opacity flex items-center justify-center gap-2 relative z-10">
               <Icon name="edit_document" className="text-[16px]" />
               编辑在线简历
-            </Link>
+            </a>
           </section>
 
           <section className="grid grid-cols-3 gap-3">
@@ -85,7 +84,7 @@ export default function ProfilePage() {
               { icon: "help", label: "帮助与客服", href: "#" },
               { icon: "settings", label: "系统设置", href: "#" },
             ].map((item) => (
-              <Link key={item.label} href={item.href} className="flex items-center justify-between p-4 border-b border-border-subtle last:border-b-0">
+              <a key={item.label} href="#" className="flex items-center justify-between p-4 border-b border-border-subtle last:border-b-0">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
                     <Icon name={item.icon} size={20} />
@@ -93,7 +92,7 @@ export default function ProfilePage() {
                   <span className="text-body-md text-on-surface">{item.label}</span>
                 </div>
                 <Icon name="chevron_right" className="text-outline-variant" />
-              </Link>
+              </a>
             ))}
           </section>
 

@@ -1,22 +1,29 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
 import TopHeader from "@/components/TopHeader";
 import BottomNav from "@/components/BottomNav";
 import { api } from "@/lib/api";
 
+function getId(): string | null {
+  if (typeof window === "undefined") return null;
+  const path = window.location.pathname;
+  const match = path.match(/\/jobs\/(\d+)(?:\.html)?/);
+  return match ? match[1] : null;
+}
+
 export default function JobDetailClient() {
-  const { id } = useParams<{ id: string }>();
-  const router = useRouter();
+  const id = getId();
   const [job, setJob] = useState<any>(null);
   const [applying, setApplying] = useState(false);
   const [msg, setMsg] = useState("");
 
   useEffect(() => {
-    api.jobs.detail(Number(id)).then((res) => {
-      if (res.code === 200) setJob(res.data);
-    });
+    if (id) {
+      api.jobs.detail(Number(id)).then((res) => {
+        if (res.code === 200) setJob(res.data);
+      });
+    }
   }, [id]);
 
   const handleApply = async () => {
@@ -26,7 +33,7 @@ export default function JobDetailClient() {
     if (res.code === 200) {
       setMsg("投递成功！");
     } else if (res.code === 401) {
-      router.push("/login");
+      window.location.href = "login.html";
     } else {
       setMsg(res.message);
     }

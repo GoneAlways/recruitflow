@@ -2,7 +2,6 @@
 
 import TopHeader from "@/components/TopHeader";
 import BottomNav from "@/components/BottomNav";
-import Link from "next/link";
 import { Icon } from "@/components/Icon";
 
 const MOCK_USER = {
@@ -31,13 +30,13 @@ export default function ResumePage() {
               <p className="text-body-md text-on-surface-variant">{user.title}</p>
             </div>
           </div>
-          <Link href="/profile/edit" className="flex items-center justify-center gap-2 w-full py-2 bg-primary text-on-primary rounded-lg text-label-md">
+          <a href="profile/edit.html" className="flex items-center justify-center gap-2 w-full py-2 bg-primary text-on-primary rounded-lg text-label-md">
             <Icon name="edit_document" size={16} />
             编辑个人信息
-          </Link>
+          </a>
         </section>
 
-        <Link href="/profile/education" className="bg-surface-container-lowest rounded-xl p-gutter-md border border-border-subtle shadow-card flex items-center justify-between">
+        <a href="profile/education.html" className="bg-surface-container-lowest rounded-xl p-gutter-md border border-border-subtle shadow-card flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center">
               <Icon name="school" className="text-primary" />
@@ -45,9 +44,9 @@ export default function ResumePage() {
             <span className="text-body-md text-on-surface">教育经历</span>
           </div>
           <Icon name="chevron_right" className="text-outline-variant" />
-        </Link>
+        </a>
 
-        <Link href="/profile/experience" className="bg-surface-container-lowest rounded-xl p-gutter-md border border-border-subtle shadow-card flex items-center justify-between">
+        <a href="profile/experience.html" className="bg-surface-container-lowest rounded-xl p-gutter-md border border-border-subtle shadow-card flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center">
               <Icon name="work" className="text-primary" />
@@ -55,7 +54,7 @@ export default function ResumePage() {
             <span className="text-body-md text-on-surface">工作经历</span>
           </div>
           <Icon name="chevron_right" className="text-outline-variant" />
-        </Link>
+        </a>
 
         <section className="bg-surface-container-lowest rounded-xl p-gutter-md border border-border-subtle shadow-card">
           <h3 className="text-label-md text-on-surface-variant mb-3">技能标签</h3>

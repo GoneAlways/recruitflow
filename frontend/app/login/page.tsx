@@ -1,12 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { api } from "@/lib/api";
 import { Icon } from "@/components/Icon";
 
 export default function LoginPage() {
-  const router = useRouter();
   const [isRegister, setIsRegister] = useState(false);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -39,7 +37,7 @@ export default function LoginPage() {
       setToast(true);
       setTimeout(() => {
         setToast(false);
-        router.push("/");
+        window.location.href = "index.html";
       }, 1500);
     } else {
       setError(res.message);

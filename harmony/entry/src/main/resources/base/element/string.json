@@ -1,0 +1,15 @@
+{
+  "string": [{
+    "name": "module_desc",
+    "value": "RecruitFlow HarmonyOS Module"
+  }, {
+    "name": "EntryAbility_desc",
+    "value": "RecruitFlow Entry Ability"
+  }, {
+    "name": "EntryAbility_label",
+    "value": "RecruitFlow"
+  }, {
+    "name": "app_name",
+    "value": "RecruitFlow"
+  }]
+}

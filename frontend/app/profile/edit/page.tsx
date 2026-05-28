@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+
 import { api } from "@/lib/api";
 import { Icon } from "@/components/Icon";
 
 export default function EditProfilePage() {
-  const router = useRouter();
+
   const [name, setName] = useState("张伟");
   const [gender, setGender] = useState("male");
   const [birthday, setBirthday] = useState("1995-06-15");
@@ -28,7 +28,7 @@ export default function EditProfilePage() {
 
   const handleSave = async () => {
     await api.user.updateProfile({ name, gender, birthday, work_start_date: workDate, city });
-    router.back();
+    window.history.back();
   };
 
   return (
@@ -36,7 +36,7 @@ export default function EditProfilePage() {
       {/* Header */}
       <header className="flex justify-between items-center w-full px-margin-mobile h-14 bg-surface-container-lowest sticky top-0 z-50 shadow-[0_1px_3px_rgba(0,0,0,0.02)]">
         <button
-          onClick={() => router.back()}
+          onClick={() => window.history.back()}
           className="w-10 h-10 flex items-center justify-start text-on-surface hover:text-primary transition-colors"
         >
           <Icon name="arrow_back_ios" />

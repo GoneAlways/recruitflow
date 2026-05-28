@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+
 import { Icon } from "@/components/Icon";
 
 export default function EditEducationPage() {
-  const router = useRouter();
+
   const [school, setSchool] = useState("北京大学");
   const [major, setMajor] = useState("计算机科学与技术");
   const [degree, setDegree] = useState("bachelor");
@@ -13,7 +13,7 @@ export default function EditEducationPage() {
   const [description, setDescription] = useState("");
 
   const handleSave = () => {
-    router.back();
+    window.history.back();
   };
 
   return (
@@ -21,7 +21,7 @@ export default function EditEducationPage() {
       {/* Header */}
       <header className="sticky top-0 z-50 w-full h-14 bg-surface flex items-center justify-between px-margin-mobile border-b border-border-subtle/50 shadow-sm backdrop-blur-md bg-surface/90">
         <button
-          onClick={() => router.back()}
+          onClick={() => window.history.back()}
           className="w-10 h-10 flex items-center justify-center -ml-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-high"
         >
           <Icon name="arrow_back_ios_new" />

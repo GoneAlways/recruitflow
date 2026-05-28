@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { Icon } from "@/components/Icon";
 
 const cities = ["不限", "北京", "上海", "广州", "深圳", "杭州"];
@@ -10,7 +9,6 @@ const degrees = ["不限", "大专", "本科", "硕士", "博士"];
 const jobTypes = ["不限", "全职", "兼职", "实习"];
 
 export default function FilterPage() {
-  const router = useRouter();
   const [city, setCity] = useState("不限");
   const [salary, setSalary] = useState("不限");
   const [degree, setDegree] = useState("不限");
@@ -22,7 +20,7 @@ export default function FilterPage() {
     if (salary !== "不限") params.set("salary_min", salary);
     if (degree !== "不限") params.set("education", degree);
     if (jobType !== "不限") params.set("job_type", jobType);
-    router.push(`/?${params.toString()}`);
+    window.location.href = `index.html?${params.toString()}`;
   };
 
   const handleReset = () => {
@@ -74,7 +72,7 @@ export default function FilterPage() {
       {/* Header */}
       <header className="bg-surface docked full-width top-0 z-50 flex justify-between items-center w-full px-margin-mobile h-14 border-b border-border-subtle">
         <button
-          onClick={() => router.back()}
+          onClick={() => window.history.back()}
           className="text-on-surface-variant p-2 -ml-2 rounded-full hover:bg-surface-container-high transition-colors duration-200"
         >
           <Icon name="close" />

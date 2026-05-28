@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+
 import { Icon } from "@/components/Icon";
 
 export default function EditExperiencePage() {
-  const router = useRouter();
+
   const [company, setCompany] = useState("科技发展有限公司");
   const [position, setPosition] = useState("高级产品经理");
   const [department, setDepartment] = useState("产品研发部");
@@ -17,14 +17,14 @@ export default function EditExperiencePage() {
   );
 
   const handleSave = () => {
-    router.back();
+    window.history.back();
   };
 
   return (
     <div className="min-h-screen bg-background-surface text-on-surface antialiased">
       {/* Mobile Header */}
       <header className="md:hidden flex items-center justify-between px-margin-mobile h-14 bg-surface sticky top-0 z-50 border-b border-border-subtle shadow-sm">
-        <button onClick={() => router.back()} className="p-2 -ml-2 text-on-surface-variant">
+        <button onClick={() => window.history.back()} className="p-2 -ml-2 text-on-surface-variant">
           <Icon name="close" />
         </button>
         <h1 className="text-body-lg font-semibold">编辑工作经历</h1>
@@ -36,7 +36,7 @@ export default function EditExperiencePage() {
       {/* Desktop Header */}
       <header className="hidden md:flex justify-between items-center w-full px-margin-desktop h-16 bg-surface border-b border-border-subtle sticky top-0 z-50">
         <div className="flex items-center gap-4">
-          <button onClick={() => router.back()} className="p-2 hover:bg-surface-container-high rounded-full transition-colors text-on-surface-variant">
+          <button onClick={() => window.history.back()} className="p-2 hover:bg-surface-container-high rounded-full transition-colors text-on-surface-variant">
             <Icon name="arrow_back" className="text-[24px]" />
           </button>
           <h1 className="text-headline-md text-on-surface">编辑工作经历</h1>
@@ -163,7 +163,7 @@ export default function EditExperiencePage() {
             删除经历
           </button>
           <div className="flex gap-4">
-            <button onClick={() => router.back()} className="px-6 py-2.5 border border-border-subtle text-on-surface bg-surface-container-lowest hover:bg-surface-container-low rounded-xl text-body-md font-medium transition-colors">
+            <button onClick={() => window.history.back()} className="px-6 py-2.5 border border-border-subtle text-on-surface bg-surface-container-lowest hover:bg-surface-container-low rounded-xl text-body-md font-medium transition-colors">
               取消
             </button>
             <button onClick={handleSave} className="px-8 py-2.5 bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container rounded-xl text-body-md font-medium transition-colors shadow-sm">

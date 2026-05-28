@@ -5,11 +5,9 @@ import TopHeader from "@/components/TopHeader";
 import BottomNav from "@/components/BottomNav";
 import StatusBadge from "@/components/StatusBadge";
 import { api } from "@/lib/api";
-import { useRouter } from "next/navigation";
 import { Icon } from "@/components/Icon";
 
 export default function TrackingPage() {
-  const router = useRouter();
   const [apps, setApps] = useState<any[]>([]);
   const [activeTab, setActiveTab] = useState("全部");
 
@@ -22,9 +20,9 @@ export default function TrackingPage() {
     };
     api.applications.list(statusMap[activeTab]).then((res) => {
       if (res.code === 200) setApps(res.data);
-      if (res.code === 401) router.push("/login");
+      if (res.code === 401) window.location.href = "login.html";
     });
-  }, [activeTab, router]);
+  }, [activeTab]);
 
   const tabs = ["全部", "已邀约", "已查看", "不合适"];
 

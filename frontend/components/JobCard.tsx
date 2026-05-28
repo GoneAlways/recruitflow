@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import StatusBadge from "./StatusBadge";
 
 interface JobCardProps {
@@ -39,7 +38,7 @@ export default function JobCard({ job, showStatus }: JobCardProps) {
   const fmt = (n: number) => `$${(n / 1000).toFixed(0)}k`;
 
   return (
-    <Link href={`/jobs/${job.id}`}>
+    <a href={`jobs/${job.id}.html`}>
       <div className="bg-surface-container-lowest p-gutter-md rounded-xl border border-border-subtle shadow-card hover:border-primary transition-colors cursor-pointer group">
         <div className="flex justify-between items-start mb-2">
           <h3 className="text-headline-md text-on-surface group-hover:text-primary transition-colors">
@@ -79,6 +78,6 @@ export default function JobCard({ job, showStatus }: JobCardProps) {
           ) : null}
         </div>
       </div>
-    </Link>
+    </a>
   );
 }
