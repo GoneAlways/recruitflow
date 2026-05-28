@@ -15,51 +15,6 @@ export const mockUser = {
   },
 };
 
-export const mockJobDetails: Record<number, any> = {
-  1: {
-    ...mockJobs.data.items[0],
-    description: "负责字节跳动核心产品线的前端架构设计与开发，包括抖音、今日头条等亿级用户产品。参与前端工程化建设，推动组件化和自动化测试落地。与产品和设计团队紧密合作，交付高质量的用户体验。",
-    requirements: "1. 3-5年前端开发经验\n2. 精通 React/Vue 等主流框架\n3. 熟悉 TypeScript、Webpack、Node.js\n4. 有大型项目架构经验优先\n5. 良好的沟通协作能力",
-    benefits: "六险一金、免费三餐、租房补贴、弹性工作、期权激励",
-    education: "bachelor",
-  },
-  2: {
-    ...mockJobs.data.items[1],
-    description: "负责腾讯内部 React Native 基础设施建设，支撑微信、QQ 等核心业务的移动端开发。推动跨平台方案落地，优化性能与开发体验。",
-    requirements: "1. 3-5年 React Native 开发经验\n2. 熟悉 iOS/Android 原生开发\n3. 有性能优化经验\n4. 开源项目贡献者优先",
-    benefits: "六险一金、年终奖、免费班车、健身房、股票期权",
-    education: "bachelor",
-  },
-  3: {
-    ...mockJobs.data.items[2],
-    description: "负责阿里巴巴核心电商业务的前端架构设计，制定技术规范和最佳实践。带领团队进行技术攻坚，推动前端技术演进。",
-    requirements: "1. 5-10年前端经验\n2. 精通前端工程化\n3. 有技术管理经验\n4. 开源社区活跃者优先",
-    benefits: "六险一金、股票期权、带薪年假、员工旅游、技术培训",
-    education: "master",
-  },
-  4: {
-    ...mockJobs.data.items[3],
-    description: "参与小红书社区产品的视觉与交互设计，从用户研究到设计落地全流程。打造年轻用户喜爱的设计语言。",
-    requirements: "1. 1-3年产品设计经验\n2. 精通 Figma/Sketch\n3. 有移动端设计经验\n4. 对社区产品有热情",
-    benefits: "五险一金、弹性工作、免费下午茶、宠物友好",
-    education: "bachelor",
-  },
-  5: {
-    ...mockJobs.data.items[4],
-    description: "负责美团外卖/到店等业务的全栈开发，前端用 React，后端用 Node.js/Java。参与核心交易链路的技术迭代。",
-    requirements: "1. 3-5年全栈开发经验\n2. 精通 React + Node.js\n3. 有高并发系统经验优先\n4. 熟悉数据库设计",
-    benefits: "六险一金、餐补、打车报销、期权、技术大会",
-    education: "bachelor",
-  },
-  6: {
-    ...mockJobs.data.items[5],
-    description: "参与百度搜索/AI 相关产品的前端开发实习，在导师指导下完成真实业务需求。表现优秀者可转正。",
-    requirements: "1. 计算机相关专业在读\n2. 熟悉 HTML/CSS/JavaScript\n3. 了解 React/Vue 优先\n4. 每周至少 4 天，实习 3 个月以上",
-    benefits: "实习补贴、免费三餐、导师带教、转正机会、技术分享",
-    education: "bachelor",
-  },
-};
-
 export const mockMessages = [
   {
     id: 1,
@@ -179,5 +134,50 @@ export const mockJobs = {
       },
     ],
     total: 6,
+  },
+};
+
+export const mockJobDetails: Record<number, any> = {
+  1: {
+    ...mockJobs.data.items[0],
+    description: "负责字节跳动核心产品线的前端架构设计与开发，包括抖音、今日头条等亿级用户产品。参与前端工程化建设，推动组件化和自动化测试落地。与产品和设计团队紧密合作，交付高质量的用户体验。",
+    requirements: "1. 3-5年前端开发经验\n2. 精通 React/Vue 等主流框架\n3. 熟悉 TypeScript、Webpack、Node.js\n4. 有大型项目架构经验优先\n5. 良好的沟通协作能力",
+    benefits: "六险一金、免费三餐、租房补贴、弹性工作、期权激励",
+    education: "bachelor",
+  },
+  2: {
+    ...mockJobs.data.items[1],
+    description: "负责腾讯内部 React Native 基础设施建设，支撑微信、QQ 等核心业务的移动端开发。推动跨平台方案落地，优化性能与开发体验。",
+    requirements: "1. 3-5年 React Native 开发经验\n2. 熟悉 iOS/Android 原生开发\n3. 有性能优化经验\n4. 开源项目贡献者优先",
+    benefits: "六险一金、年终奖、免费班车、健身房、股票期权",
+    education: "bachelor",
+  },
+  3: {
+    ...mockJobs.data.items[2],
+    description: "负责阿里巴巴核心电商业务的前端架构设计，制定技术规范和最佳实践。带领团队进行技术攻坚，推动前端技术演进。",
+    requirements: "1. 5-10年前端经验\n2. 精通前端工程化\n3. 有技术管理经验\n4. 开源社区活跃者优先",
+    benefits: "六险一金、股票期权、带薪年假、员工旅游、技术培训",
+    education: "master",
+  },
+  4: {
+    ...mockJobs.data.items[3],
+    description: "参与小红书社区产品的视觉与交互设计，从用户研究到设计落地全流程。打造年轻用户喜爱的设计语言。",
+    requirements: "1. 1-3年产品设计经验\n2. 精通 Figma/Sketch\n3. 有移动端设计经验\n4. 对社区产品有热情",
+    benefits: "五险一金、弹性工作、免费下午茶、宠物友好",
+    education: "bachelor",
+  },
+  5: {
+    ...mockJobs.data.items[4],
+    description: "负责美团外卖/到店等业务的全栈开发，前端用 React，后端用 Node.js/Java。参与核心交易链路的技术迭代。",
+    requirements: "1. 3-5年全栈开发经验\n2. 精通 React + Node.js\n3. 有高并发系统经验优先\n4. 熟悉数据库设计",
+    benefits: "六险一金、餐补、打车报销、期权、技术大会",
+    education: "bachelor",
+  },
+  6: {
+    ...mockJobs.data.items[5],
+    description: "参与百度搜索/AI 相关产品的前端开发实习，在导师指导下完成真实业务需求。表现优秀者可转正。",
+    requirements: "1. 计算机相关专业在读\n2. 熟悉 HTML/CSS/JavaScript\n3. 了解 React/Vue 优先\n4. 每周至少 4 天，实习 3 个月以上",
+    benefits: "实习补贴、免费三餐、导师带教、转正机会、技术分享",
+    education: "bachelor",
   },
 };
