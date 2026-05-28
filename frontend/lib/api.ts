@@ -1,4 +1,4 @@
-import { mockUser } from "./mock";
+import { mockUser, mockJobs, mockJobDetails } from "./mock";
 
 const API_BASE = "http://8.136.142.66/api";
 const TIMEOUT_MS = 5000;
@@ -83,11 +83,12 @@ export const api = {
   jobs: {
     list: (params?: Record<string, string>) => {
       const qs = params ? "?" + new URLSearchParams(params).toString() : "";
-      return request<{ items: any[]; total: number }>(`/jobs${qs}`);
+      return request<{ items: any[]; total: number }>(`/jobs${qs}`, {}, mockJobs.data);
     },
-    detail: (id: number) => request<any>(`/jobs/${id}`),
+    detail: (id: number) =>
+      request<any>(`/jobs/${id}`, {}, mockJobDetails[id] || mockJobs.data.items[0]),
     apply: (id: number) =>
-      request<any>(`/jobs/${id}/apply`, { method: "POST" }),
+      request<any>(`/jobs/${id}/apply`, { method: "POST" }, { message: "投递成功" }),
   },
 
   applications: {
