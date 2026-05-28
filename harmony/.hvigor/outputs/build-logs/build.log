@@ -317,3 +317,259 @@ Error Message: Error in C:\Users\72732\Desktop\recruitflow\harmony\entry\oh-pack
 [2026-05-28T12:00:54.311] [DEBUG] debug-file - worker[1] exits with exit code 1.
 [2026-05-28T12:00:54.315] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
 [2026-05-28T12:00:54.315] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2026-05-28T12:01:54.067] [DEBUG] debug-file - session manager: set active socket. socketId=yiUSUMIGlXcskovoAAAD
+[2026-05-28T12:01:54.075] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2026-05-28T12:01:54.082] [DEBUG] debug-file - Workers' log level updated to INFO
+[2026-05-28T12:01:54.086] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: true,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' },
+  optimizationStrategy: 'memory',
+  hotCompile: undefined,
+  hotReloadBuild: undefined,
+  customizedParam: undefined
+}
+[2026-05-28T12:01:54.090] [DEBUG] debug-file - Cache service initialization finished in 4 ms 
+[2026-05-28T12:01:54.092] [DEBUG] debug-file - hvigorfile, resolving C:\Users\72732\Desktop\recruitflow\harmony\hvigorfile.ts
+[2026-05-28T12:01:54.101] [DEBUG] debug-file - hvigorfile, require result:  { default: { plugins: [] } }
+[2026-05-28T12:01:54.101] [DEBUG] debug-file - hvigorfile, binding system plugins null
+[2026-05-28T12:01:54.102] [DEBUG] debug-file - Starting plugin build process
+[2026-05-28T12:01:54.102] [DEBUG] debug-file - App plugin prepare start...
+[2026-05-28T12:01:54.102] [DEBUG] debug-file - App plugin prepare end...
+[2026-05-28T12:01:54.102] [DEBUG] debug-file - App plugin creating...
+[2026-05-28T12:01:54.109] [DEBUG] debug-file - App plugin register hook start...
+[2026-05-28T12:01:54.109] [DEBUG] debug-file - App plugin register hook end...
+[2026-05-28T12:01:54.109] [DEBUG] debug-file - Plugin build process completed
+[2026-05-28T12:01:54.109] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2026-05-28T12:01:54.110] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2026-05-28T12:01:54.110] [DEBUG] debug-file - Product 'default' build option initialized
+[2026-05-28T12:01:54.110] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2026-05-28T12:01:54.111] [DEBUG] debug-file - Obtain build option for product 'default'in this build.
+[2026-05-28T12:01:54.112] [DEBUG] debug-file - No signingConfig found, initRemoteHspCache failed.
+[2026-05-28T12:01:54.116] [DEBUG] debug-file - Start recording SDK configuration permission data.
+[2026-05-28T12:01:54.141] [DEBUG] debug-file - Sdk init in 29 ms 
+[2026-05-28T12:01:54.145] [DEBUG] debug-file - Project task initialization takes 5 ms 
+[2026-05-28T12:01:54.146] [DEBUG] debug-file - hvigorfile, begin to bind custom plugins...
+[2026-05-28T12:01:54.146] [DEBUG] debug-file - hvigorfile, no custom plugins were found in C:\Users\72732\Desktop\recruitflow\harmony\hvigorfile.ts
+[2026-05-28T12:01:54.146] [DEBUG] debug-file - hvigorfile, resolve finished C:\Users\72732\Desktop\recruitflow\harmony\hvigorfile.ts
+[2026-05-28T12:01:54.147] [DEBUG] debug-file - hvigorfile, resolving C:\Users\72732\Desktop\recruitflow\harmony\entry\hvigorfile.ts
+[2026-05-28T12:01:54.150] [DEBUG] debug-file - hvigorfile, require result:  { default: { plugins: [] } }
+[2026-05-28T12:01:54.150] [DEBUG] debug-file - hvigorfile, binding system plugins null
+[2026-05-28T12:01:54.150] [DEBUG] debug-file - Starting plugin build process
+[2026-05-28T12:01:54.150] [DEBUG] debug-file - Hap plugin creating...
+[2026-05-28T12:01:54.153] [DEBUG] debug-file - failed to load cangjie to dynamically generate schemas: Error: Cannot find module '@ohos/cangjie-build-support/index'
+Require stack:
+- C:\Users\72732\.hvigor\project_caches\429f18ec0f31d90893365bbd5a58338e\workspace\node_modules\.pnpm\@ohos+hvigor-ohos-plugin@6.24.1\node_modules\@ohos\hvigor-ohos-plugin\src\plugin\hooks\cangjie-register.js
+- C:\Users\72732\.hvigor\project_caches\429f18ec0f31d90893365bbd5a58338e\workspace\node_modules\.pnpm\@ohos+hvigor-ohos-plugin@6.24.1\node_modules\@ohos\hvigor-ohos-plugin\src\plugin\strategy\stage-init-strategy.js
+- C:\Users\72732\.hvigor\project_caches\429f18ec0f31d90893365bbd5a58338e\workspace\node_modules\.pnpm\@ohos+hvigor-ohos-plugin@6.24.1\node_modules\@ohos\hvigor-ohos-plugin\src\plugin\builder\abstract-plugin-builder.js
+- C:\Users\72732\.hvigor\project_caches\429f18ec0f31d90893365bbd5a58338e\workspace\node_modules\.pnpm\@ohos+hvigor-ohos-plugin@6.24.1\node_modules\@ohos\hvigor-ohos-plugin\src\plugin\builder\app-plugin-builder.js
+- C:\Users\72732\.hvigor\project_caches\429f18ec0f31d90893365bbd5a58338e\workspace\node_modules\.pnpm\@ohos+hvigor-ohos-plugin@6.24.1\node_modules\@ohos\hvigor-ohos-plugin\src\plugin\factory\plugin-factory.js
+- C:\Users\72732\.hvigor\project_caches\429f18ec0f31d90893365bbd5a58338e\workspace\node_modules\.pnpm\@ohos+hvigor-ohos-plugin@6.24.1\node_modules\@ohos\hvigor-ohos-plugin\index.js
+- C:\Users\72732\Desktop\recruitflow\harmony\hvigorfile.ts
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\lifecycle\configuration.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\boot\index.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\daemon\cluster\worker-process-lifecycle.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\daemon\process\daemon-process-boot-script.js
+[2026-05-28T12:01:54.156] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2026-05-28T12:01:54.156] [DEBUG] debug-file - Target 'default' config initialized
+[2026-05-28T12:01:54.156] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2026-05-28T12:01:54.156] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2026-05-28T12:01:54.157] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=release
+[2026-05-28T12:01:54.157] [DEBUG] debug-file - Target 'default' config initialized
+[2026-05-28T12:01:54.157] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2026-05-28T12:01:54.157] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2026-05-28T12:01:54.157] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2026-05-28T12:01:54.157] [DEBUG] debug-file - Target 'default' config initialized
+[2026-05-28T12:01:54.157] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2026-05-28T12:01:54.157] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2026-05-28T12:01:54.157] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2026-05-28T12:01:54.159] [DEBUG] debug-file - Module entry task initialization takes 1 ms 
+[2026-05-28T12:01:54.159] [DEBUG] debug-file - Hap plugin register hook start...
+[2026-05-28T12:01:54.159] [DEBUG] debug-file - Hap plugin register hook end...
+[2026-05-28T12:01:54.159] [DEBUG] debug-file - Plugin build process completed
+[2026-05-28T12:01:54.159] [DEBUG] debug-file - hvigorfile, begin to bind custom plugins...
+[2026-05-28T12:01:54.159] [DEBUG] debug-file - hvigorfile, no custom plugins were found in C:\Users\72732\Desktop\recruitflow\harmony\entry\hvigorfile.ts
+[2026-05-28T12:01:54.159] [DEBUG] debug-file - hvigorfile, resolve finished C:\Users\72732\Desktop\recruitflow\harmony\entry\hvigorfile.ts
+[2026-05-28T12:01:54.230] [DEBUG] debug-file - hvigorfile, resolve hvigorfile dependencies in 71 ms 
+[2026-05-28T12:01:54.231] [DEBUG] debug-file - project has submodules:entry
+[2026-05-28T12:01:54.233] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2026-05-28T12:01:54.237] [DEBUG] debug-file - load to the disk finished
+[2026-05-28T12:01:54.238] [DEBUG] debug-file - Start to initialize dependency information.
+[2026-05-28T12:01:54.239] [DEBUG] debug-file - Module harmony Collected Dependency: 
+[2026-05-28T12:01:54.240] [DEBUG] debug-file - Module harmony's total dependency: 0
+[2026-05-28T12:01:54.240] [DEBUG] debug-file - Start to initialize dependency information.
+[2026-05-28T12:01:54.244] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2026-05-28T12:01:54.244] [DEBUG] debug-file - Module entry's total dependency: 0
+[2026-05-28T12:01:54.246] [DEBUG] debug-file - Configuration phase cost:156 ms 
+[2026-05-28T12:01:54.251] [DEBUG] debug-file - Configuration task cost before running: 168 ms 
+[2026-05-28T12:01:54.252] [DEBUG] debug-file - Executing task :entry:init
+[2026-05-28T12:01:54.253] [DEBUG] debug-file - entry : init cost memory 0.01627349853515625
+[2026-05-28T12:01:54.253] [DEBUG] debug-file - runTaskFromQueue task cost before running: 171 ms 
+[2026-05-28T12:01:54.254] [INFO] debug-file - Finished :entry:init... after 2 ms 
+[2026-05-28T12:01:54.255] [DEBUG] debug-file - Executing task ::init
+[2026-05-28T12:01:54.255] [DEBUG] debug-file - harmony : init cost memory 0.0161590576171875
+[2026-05-28T12:01:54.256] [DEBUG] debug-file - runTaskFromQueue task cost before running: 173 ms 
+[2026-05-28T12:01:54.256] [INFO] debug-file - Finished ::init... after 1 ms 
+[2026-05-28T12:01:54.282] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2026-05-28T12:01:54.285] [DEBUG] debug-file - There's no busy workers and idle workers need cleanup.
+[2026-05-28T12:01:54.286] [DEBUG] debug-file - hvigor build process will be closed.
+[2026-05-28T12:01:54.293] [DEBUG] debug-file - session manager: send message to worker process.
+[2026-05-28T12:01:54.293] [DEBUG] debug-file - session manager: send message to worker process.
+[2026-05-28T12:01:54.313] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2026-05-28T12:01:54.313] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2026-05-28T12:02:00.090] [DEBUG] debug-file - session manager: set active socket. socketId=LWtYpWkfF4uEBoCWAAAF
+[2026-05-28T12:02:00.096] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2026-05-28T12:02:00.100] [DEBUG] debug-file - Workers' log level updated to INFO
+[2026-05-28T12:02:00.103] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: true,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' },
+  optimizationStrategy: 'memory',
+  hotCompile: undefined,
+  hotReloadBuild: undefined,
+  customizedParam: undefined
+}
+[2026-05-28T12:02:00.105] [DEBUG] debug-file - Cache service initialization finished in 2 ms 
+[2026-05-28T12:02:00.106] [DEBUG] debug-file - hvigorfile, resolving C:\Users\72732\Desktop\recruitflow\harmony\hvigorfile.ts
+[2026-05-28T12:02:00.111] [DEBUG] debug-file - hvigorfile, require result:  { default: { plugins: [] } }
+[2026-05-28T12:02:00.112] [DEBUG] debug-file - hvigorfile, binding system plugins null
+[2026-05-28T12:02:00.112] [DEBUG] debug-file - Starting plugin build process
+[2026-05-28T12:02:00.112] [DEBUG] debug-file - App plugin prepare start...
+[2026-05-28T12:02:00.112] [DEBUG] debug-file - App plugin prepare end...
+[2026-05-28T12:02:00.112] [DEBUG] debug-file - App plugin creating...
+[2026-05-28T12:02:00.117] [DEBUG] debug-file - App plugin register hook start...
+[2026-05-28T12:02:00.118] [DEBUG] debug-file - App plugin register hook end...
+[2026-05-28T12:02:00.118] [DEBUG] debug-file - Plugin build process completed
+[2026-05-28T12:02:00.118] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2026-05-28T12:02:00.118] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2026-05-28T12:02:00.118] [DEBUG] debug-file - Product 'default' build option initialized
+[2026-05-28T12:02:00.118] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2026-05-28T12:02:00.119] [DEBUG] debug-file - Obtain build option for product 'default'in this build.
+[2026-05-28T12:02:00.120] [DEBUG] debug-file - No signingConfig found, initRemoteHspCache failed.
+[2026-05-28T12:02:00.123] [DEBUG] debug-file - Start recording SDK configuration permission data.
+[2026-05-28T12:02:00.141] [DEBUG] debug-file - Sdk init in 22 ms 
+[2026-05-28T12:02:00.145] [DEBUG] debug-file - Project task initialization takes 4 ms 
+[2026-05-28T12:02:00.145] [DEBUG] debug-file - hvigorfile, begin to bind custom plugins...
+[2026-05-28T12:02:00.145] [DEBUG] debug-file - hvigorfile, no custom plugins were found in C:\Users\72732\Desktop\recruitflow\harmony\hvigorfile.ts
+[2026-05-28T12:02:00.145] [DEBUG] debug-file - hvigorfile, resolve finished C:\Users\72732\Desktop\recruitflow\harmony\hvigorfile.ts
+[2026-05-28T12:02:00.146] [DEBUG] debug-file - hvigorfile, resolving C:\Users\72732\Desktop\recruitflow\harmony\entry\hvigorfile.ts
+[2026-05-28T12:02:00.149] [DEBUG] debug-file - hvigorfile, require result:  { default: { plugins: [] } }
+[2026-05-28T12:02:00.149] [DEBUG] debug-file - hvigorfile, binding system plugins null
+[2026-05-28T12:02:00.149] [DEBUG] debug-file - Starting plugin build process
+[2026-05-28T12:02:00.149] [DEBUG] debug-file - Hap plugin creating...
+[2026-05-28T12:02:00.151] [DEBUG] debug-file - failed to load cangjie to dynamically generate schemas: Error: Cannot find module '@ohos/cangjie-build-support/index'
+Require stack:
+- C:\Users\72732\.hvigor\project_caches\429f18ec0f31d90893365bbd5a58338e\workspace\node_modules\.pnpm\@ohos+hvigor-ohos-plugin@6.24.1\node_modules\@ohos\hvigor-ohos-plugin\src\plugin\hooks\cangjie-register.js
+- C:\Users\72732\.hvigor\project_caches\429f18ec0f31d90893365bbd5a58338e\workspace\node_modules\.pnpm\@ohos+hvigor-ohos-plugin@6.24.1\node_modules\@ohos\hvigor-ohos-plugin\src\plugin\strategy\stage-init-strategy.js
+- C:\Users\72732\.hvigor\project_caches\429f18ec0f31d90893365bbd5a58338e\workspace\node_modules\.pnpm\@ohos+hvigor-ohos-plugin@6.24.1\node_modules\@ohos\hvigor-ohos-plugin\src\plugin\builder\abstract-plugin-builder.js
+- C:\Users\72732\.hvigor\project_caches\429f18ec0f31d90893365bbd5a58338e\workspace\node_modules\.pnpm\@ohos+hvigor-ohos-plugin@6.24.1\node_modules\@ohos\hvigor-ohos-plugin\src\plugin\builder\app-plugin-builder.js
+- C:\Users\72732\.hvigor\project_caches\429f18ec0f31d90893365bbd5a58338e\workspace\node_modules\.pnpm\@ohos+hvigor-ohos-plugin@6.24.1\node_modules\@ohos\hvigor-ohos-plugin\src\plugin\factory\plugin-factory.js
+- C:\Users\72732\.hvigor\project_caches\429f18ec0f31d90893365bbd5a58338e\workspace\node_modules\.pnpm\@ohos+hvigor-ohos-plugin@6.24.1\node_modules\@ohos\hvigor-ohos-plugin\index.js
+- C:\Users\72732\Desktop\recruitflow\harmony\hvigorfile.ts
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\lifecycle\configuration.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\boot\index.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\daemon\cluster\worker-process-lifecycle.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\daemon\process\daemon-process-boot-script.js
+[2026-05-28T12:02:00.154] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2026-05-28T12:02:00.154] [DEBUG] debug-file - Target 'default' config initialized
+[2026-05-28T12:02:00.154] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2026-05-28T12:02:00.154] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2026-05-28T12:02:00.154] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=release
+[2026-05-28T12:02:00.154] [DEBUG] debug-file - Target 'default' config initialized
+[2026-05-28T12:02:00.154] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2026-05-28T12:02:00.154] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2026-05-28T12:02:00.154] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2026-05-28T12:02:00.154] [DEBUG] debug-file - Target 'default' config initialized
+[2026-05-28T12:02:00.155] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2026-05-28T12:02:00.156] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2026-05-28T12:02:00.156] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2026-05-28T12:02:00.158] [DEBUG] debug-file - Module entry task initialization takes 1 ms 
+[2026-05-28T12:02:00.158] [DEBUG] debug-file - Hap plugin register hook start...
+[2026-05-28T12:02:00.158] [DEBUG] debug-file - Hap plugin register hook end...
+[2026-05-28T12:02:00.158] [DEBUG] debug-file - Plugin build process completed
+[2026-05-28T12:02:00.158] [DEBUG] debug-file - hvigorfile, begin to bind custom plugins...
+[2026-05-28T12:02:00.158] [DEBUG] debug-file - hvigorfile, no custom plugins were found in C:\Users\72732\Desktop\recruitflow\harmony\entry\hvigorfile.ts
+[2026-05-28T12:02:00.158] [DEBUG] debug-file - hvigorfile, resolve finished C:\Users\72732\Desktop\recruitflow\harmony\entry\hvigorfile.ts
+[2026-05-28T12:02:00.214] [DEBUG] debug-file - hvigorfile, resolve hvigorfile dependencies in 56 ms 
+[2026-05-28T12:02:00.214] [DEBUG] debug-file - project has submodules:entry
+[2026-05-28T12:02:00.216] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2026-05-28T12:02:00.219] [DEBUG] debug-file - load to the disk finished
+[2026-05-28T12:02:00.220] [DEBUG] debug-file - Start to initialize dependency information.
+[2026-05-28T12:02:00.221] [DEBUG] debug-file - Module harmony Collected Dependency: 
+[2026-05-28T12:02:00.221] [DEBUG] debug-file - Module harmony's total dependency: 0
+[2026-05-28T12:02:00.222] [DEBUG] debug-file - Start to initialize dependency information.
+[2026-05-28T12:02:00.226] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2026-05-28T12:02:00.226] [DEBUG] debug-file - Module entry's total dependency: 0
+[2026-05-28T12:02:00.228] [DEBUG] debug-file - Configuration phase cost:124 ms 
+[2026-05-28T12:02:00.229] [DEBUG] debug-file - Configuration task cost before running: 129 ms 
+[2026-05-28T12:02:00.236] [DEBUG] debug-file - Executing task :entry:default@PreBuild
+[2026-05-28T12:02:00.239] [DEBUG] debug-file - Task 'entry:default@PreBuild' cost while wrapping incremental declarations: 1 ms 
+[2026-05-28T12:02:00.249] [ERROR] debug-file - Failed :entry:default@PreBuild... 
+[2026-05-28T12:02:00.249] [DEBUG] debug-file - hvigor build process will be closed with an error.
+[2026-05-28T12:02:00.252] [ERROR] debug-file - [31m00303076 Configuration Error
+Error Message: Error in C:\Users\72732\Desktop\recruitflow\harmony\entry\oh-package.json5. The name of the module must be a string, but received a undefined.
+
+* Try the following:
+  > Verify the 'name' in oh-package.json5 files.
+[39m
+
+[31m* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --debug option to get more log output.
+
+[2026-05-28T12:02:00.252] [DEBUG] debug-file - ERROR: stacktrace = AdaptorError: [31m00303076 Configuration Error
+Error Message: Error in C:\Users\72732\Desktop\recruitflow\harmony\entry\oh-package.json5. The name of the module must be a string, but received a undefined.
+
+* Try the following:
+  > Verify the 'name' in oh-package.json5 files.
+[39m
+    at OhosLogger.printErrorExit (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\log\hvigor-log.js:1:5087)
+    at PreBuild.ohPackageCheck (C:\Users\72732\.hvigor\project_caches\429f18ec0f31d90893365bbd5a58338e\workspace\node_modules\.pnpm\@ohos+hvigor-ohos-plugin@6.24.1\node_modules\@ohos\hvigor-ohos-plugin\src\tasks\abstract\abstract-pre-build.js:1:15680)
+    at PreBuild.doTaskAction (C:\Users\72732\.hvigor\project_caches\429f18ec0f31d90893365bbd5a58338e\workspace\node_modules\.pnpm\@ohos+hvigor-ohos-plugin@6.24.1\node_modules\@ohos\hvigor-ohos-plugin\src\tasks\abstract\abstract-pre-build.js:1:7482)
+    at PreBuild.<anonymous> (C:\Users\72732\.hvigor\project_caches\429f18ec0f31d90893365bbd5a58338e\workspace\node_modules\.pnpm\@ohos+hvigor-ohos-plugin@6.24.1\node_modules\@ohos\hvigor-ohos-plugin\src\tasks\task\ohos-module-task.js:1:2137)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async PreBuild.execute (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\external\task\core-task-impl.js:1:2258)
+    at async TaskProxy.execute (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\task\proxy\task-proxy.js:1:6613)
+    at async doIncrementalTask (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\core\incremental-task-executor.js:1:941)
+    at async executeOneTask (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\task\core\task-runner.js:1:4373)
+    at async runTaskFromQueue (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\task\core\task-runner.js:1:2473)
+[2026-05-28T12:02:00.252] [ERROR] debug-file - AdaptorError: [31m00303076 Configuration Error
+Error Message: Error in C:\Users\72732\Desktop\recruitflow\harmony\entry\oh-package.json5. The name of the module must be a string, but received a undefined.
+
+* Try the following:
+  > Verify the 'name' in oh-package.json5 files.
+[39m
+    at OhosLogger.printErrorExit (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\log\hvigor-log.js:1:5087)
+    at PreBuild.ohPackageCheck (C:\Users\72732\.hvigor\project_caches\429f18ec0f31d90893365bbd5a58338e\workspace\node_modules\.pnpm\@ohos+hvigor-ohos-plugin@6.24.1\node_modules\@ohos\hvigor-ohos-plugin\src\tasks\abstract\abstract-pre-build.js:1:15680)
+    at PreBuild.doTaskAction (C:\Users\72732\.hvigor\project_caches\429f18ec0f31d90893365bbd5a58338e\workspace\node_modules\.pnpm\@ohos+hvigor-ohos-plugin@6.24.1\node_modules\@ohos\hvigor-ohos-plugin\src\tasks\abstract\abstract-pre-build.js:1:7482)
+    at PreBuild.<anonymous> (C:\Users\72732\.hvigor\project_caches\429f18ec0f31d90893365bbd5a58338e\workspace\node_modules\.pnpm\@ohos+hvigor-ohos-plugin@6.24.1\node_modules\@ohos\hvigor-ohos-plugin\src\tasks\task\ohos-module-task.js:1:2137)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async PreBuild.execute (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\external\task\core-task-impl.js:1:2258)
+    at async TaskProxy.execute (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\task\proxy\task-proxy.js:1:6613)
+    at async doIncrementalTask (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\core\incremental-task-executor.js:1:941)
+    at async executeOneTask (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\task\core\task-runner.js:1:4373)
+    at async runTaskFromQueue (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\task\core\task-runner.js:1:2473)
+[2026-05-28T12:02:00.264] [ERROR] debug-file - BUILD FAILED in 164 ms 
+[2026-05-28T12:02:00.266] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\Users\72732\Desktop\recruitflow\harmony\AppScope\app.json5 cache by regenerate.
+[2026-05-28T12:02:00.267] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\Users\72732\Desktop\recruitflow\harmony\entry\src\main\module.json5 cache by regenerate.
+[2026-05-28T12:02:00.267] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\Users\72732\Desktop\recruitflow\harmony\build-profile.json5 cache by regenerate.
+[2026-05-28T12:02:00.267] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\Users\72732\Desktop\recruitflow\harmony\entry\build-profile.json5 cache by regenerate.
+[2026-05-28T12:02:00.267] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\Users\72732\Desktop\recruitflow\harmony\entry\src\main\resources\base\profile\main_pages.json cache by regenerate.
+[2026-05-28T12:02:00.268] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\Users\72732\Desktop\recruitflow\harmony\hvigor\hvigor-config.json5 cache by regenerate.
+[2026-05-28T12:02:00.268] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\Users\72732\Desktop\recruitflow\harmony\entry\oh-package.json5 cache by regenerate.
+[2026-05-28T12:02:00.268] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\Users\72732\Desktop\recruitflow\harmony\oh-package.json5 cache by regenerate.
+[2026-05-28T12:02:00.269] [DEBUG] debug-file - Incremental task entry:default@PreBuild post-execution cost:5 ms .
+[2026-05-28T12:02:00.288] [DEBUG] debug-file - There's no busy workers and idle workers need cleanup.
+[2026-05-28T12:02:00.288] [DEBUG] debug-file - hvigor build process will be closed.
+[2026-05-28T12:02:00.294] [DEBUG] debug-file - session manager: send message to worker process.
+[2026-05-28T12:02:00.295] [DEBUG] debug-file - session manager: send message to worker process.
+[2026-05-28T12:02:00.312] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2026-05-28T12:02:00.312] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.

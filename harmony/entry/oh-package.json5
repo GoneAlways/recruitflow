@@ -1,1 +1,1 @@
-{ "modelVersion": "6.1.1", "version": "1.0.0", "dependencies": {} }
+{ "modelVersion": "6.1.1", "name": "entry", "version": "1.0.0", "dependencies": {} }

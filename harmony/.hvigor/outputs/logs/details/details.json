@@ -35,7 +35,14 @@
     "IS_HVIGORFILE_TYPE_CHECK": false,
     "IS_EXECUTION_OHPM_BY_HVIGOR": false,
     "BUILD_ANALYSIS_MODE": "normal",
-    "TASK_TIME": {},
+    "TASK_TIME": {
+      "923fe53966c6cd9343e11af776cd4b05be315ea4b200b02e4d5dfb0f929b73bf": {
+        "init": 1539700
+      },
+      "APP": {
+        "init": 1021200
+      }
+    },
     "CUSTOM_TASK_TIME": {},
     "CUSTOM_PLUGIN_TIME": {},
     "APIS": [],
@@ -44,22 +51,22 @@
       "ENABLE_CPP_FUNCTION_LEVEL_INCREMENTAL": false
     },
     "CONFIG_PROPERTIES": {},
-    "BUILD_ID": "202605281200505890",
+    "TOTAL_TIME": 163276700,
+    "BUILD_ID": "202605281202001000",
     "ERROR_MESSAGE": [
       {
-        "CODE": "00303075",
-        "MESSAGE": "Error in %s. The version number of the module must be a string, but received a %s.",
+        "CODE": "00303076",
+        "MESSAGE": "Error in %s. The name of the module must be a string, but received a %s.",
         "SOLUTIONS": [
-          "Verify the 'version' in oh-package.json5 files."
+          "Verify the 'name' in oh-package.json5 files."
         ],
-        "TIMESTAMP": "1779940853978"
+        "TIMESTAMP": "1779940920246"
       },
       {
-        "CODE": "00303075",
-        "STACK": "00303075 Configuration Error\n...\n    at OhosLogger.printErrorExit (***\\tools\\hvigor\\hvigor\\src\\base\\log\\hv***g.js:1:5087)\n90893365bbd5a58338e\n90893365bbd5a58338e\n90893365bbd5a58338e\n...\n    at async PreBuild.execute (***\\tools\\hvigor\\hvigor\\src\\base\\external\\task\\co***l.js:1:2258)\n    at async TaskProxy.execute (***\\tools\\hvigor\\hvigor\\src\\base\\internal\\task\\proxy\\ta***y.js:1:6613)\n    at async doIncrementalTask (***\\tools\\hvigor\\hvigor\\src\\base\\internal\\core\\in***r.js:1:941)\n    at async executeOneTask (***\\tools\\hvigor\\hvigor\\src\\base\\internal\\task\\core\\ta***r.js:1:4373)\n    at async runTaskFromQueue (***\\tools\\hvigor\\hvigor\\src\\base\\internal\\task\\core\\ta***r.js:1:2473)",
+        "CODE": "00303076",
+        "STACK": "00303076 Configuration Error\n...\n    at OhosLogger.printErrorExit (***\\tools\\hvigor\\hvigor\\src\\base\\log\\hv***g.js:1:5087)\n90893365bbd5a58338e\n90893365bbd5a58338e\n90893365bbd5a58338e\n...\n    at async PreBuild.execute (***\\tools\\hvigor\\hvigor\\src\\base\\external\\task\\co***l.js:1:2258)\n    at async TaskProxy.execute (***\\tools\\hvigor\\hvigor\\src\\base\\internal\\task\\proxy\\ta***y.js:1:6613)\n    at async doIncrementalTask (***\\tools\\hvigor\\hvigor\\src\\base\\internal\\core\\in***r.js:1:941)\n    at async executeOneTask (***\\tools\\hvigor\\hvigor\\src\\base\\internal\\task\\core\\ta***r.js:1:4373)\n    at async runTaskFromQueue (***\\tools\\hvigor\\hvigor\\src\\base\\internal\\task\\core\\ta***r.js:1:2473)",
         "PROJECT_CONFIG": {}
       }
-    ],
-    "TOTAL_TIME": 3538275300
+    ]
   }
 }
