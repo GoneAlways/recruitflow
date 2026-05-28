@@ -1,0 +1,65 @@
+{
+  "HVIGOR_OHOS_PLUGIN": {
+    "MODULES": [
+      {
+        "MODULE_NAME": "923fe53966c6cd9343e11af776cd4b05be315ea4b200b02e4d5dfb0f929b73bf",
+        "API_TYPE": "stageMode",
+        "INCLUDE_IN_BUILD": true,
+        "IS_COMMAND_LINE_ENTRY_MODULE": true,
+        "BUILD_OPTION": [
+          {
+            "path": "debuggable",
+            "traceValue": true,
+            "value": true
+          },
+          {
+            "path": "copyFrom",
+            "traceValue": false,
+            "value": ""
+          }
+        ],
+        "PACKAGE_JSON": [],
+        "MODULE_TYPE": "entry",
+        "IS_INCREMENTAL_MODULE": true
+      }
+    ],
+    "NATIVE_COMPILER": "Default",
+    "IS_FULL_BUILD": false,
+    "PACKAGE_JSON": [],
+    "BUILD_MODE": "debug"
+  },
+  "HVIGOR": {
+    "IS_INCREMENTAL": true,
+    "IS_DAEMON": true,
+    "IS_PARALLEL": true,
+    "IS_HVIGORFILE_TYPE_CHECK": false,
+    "IS_EXECUTION_OHPM_BY_HVIGOR": false,
+    "BUILD_ANALYSIS_MODE": "normal",
+    "TASK_TIME": {},
+    "CUSTOM_TASK_TIME": {},
+    "CUSTOM_PLUGIN_TIME": {},
+    "APIS": [],
+    "CONFIG_EXPERIMENT": {
+      "ENABLE_MODULE_SKIP": false,
+      "ENABLE_CPP_FUNCTION_LEVEL_INCREMENTAL": false
+    },
+    "CONFIG_PROPERTIES": {},
+    "BUILD_ID": "202605281200505890",
+    "ERROR_MESSAGE": [
+      {
+        "CODE": "00303075",
+        "MESSAGE": "Error in %s. The version number of the module must be a string, but received a %s.",
+        "SOLUTIONS": [
+          "Verify the 'version' in oh-package.json5 files."
+        ],
+        "TIMESTAMP": "1779940853978"
+      },
+      {
+        "CODE": "00303075",
+        "STACK": "00303075 Configuration Error\n...\n    at OhosLogger.printErrorExit (***\\tools\\hvigor\\hvigor\\src\\base\\log\\hv***g.js:1:5087)\n90893365bbd5a58338e\n90893365bbd5a58338e\n90893365bbd5a58338e\n...\n    at async PreBuild.execute (***\\tools\\hvigor\\hvigor\\src\\base\\external\\task\\co***l.js:1:2258)\n    at async TaskProxy.execute (***\\tools\\hvigor\\hvigor\\src\\base\\internal\\task\\proxy\\ta***y.js:1:6613)\n    at async doIncrementalTask (***\\tools\\hvigor\\hvigor\\src\\base\\internal\\core\\in***r.js:1:941)\n    at async executeOneTask (***\\tools\\hvigor\\hvigor\\src\\base\\internal\\task\\core\\ta***r.js:1:4373)\n    at async runTaskFromQueue (***\\tools\\hvigor\\hvigor\\src\\base\\internal\\task\\core\\ta***r.js:1:2473)",
+        "PROJECT_CONFIG": {}
+      }
+    ],
+    "TOTAL_TIME": 3538275300
+  }
+}
