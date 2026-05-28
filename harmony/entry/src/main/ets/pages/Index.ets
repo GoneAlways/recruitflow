@@ -18,9 +18,11 @@ struct Index {
         .overviewModeAccess(true)
         .onConsole((event) => {
           console.info('[WebView] ' + event?.message?.getMessage());
+          return true;
         })
         .onErrorReceive((event) => {
           console.error('[WebView Error] ' + JSON.stringify(event));
+          return true;
         })
         .onPageEnd(() => {
           this.controller.runJavaScript(
