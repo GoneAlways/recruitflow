@@ -26,7 +26,9 @@ jobs:
 
       - name: Install dependencies
         working-directory: frontend
-        run: npm install
+        run: |
+          rm -f package-lock.json
+          npm install
 
       - name: Build Next.js (static export)
         working-directory: frontend
